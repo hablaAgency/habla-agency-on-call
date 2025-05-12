@@ -19,12 +19,12 @@ const Hero = () => {
             </div>
           </h1>
           
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center w-full">
             <img 
               src="/lovable-uploads/461389c2-f824-4df8-be93-f462910f226a.png"
               alt="Marketing team illustration" 
-              className="max-w-full md:max-w-2xl animate-fade-in"
-              style={{ maxHeight: isMobile ? '200px' : '300px' }}
+              className="w-full md:w-11/12 lg:w-10/12 animate-fade-in"
+              style={{ maxHeight: isMobile ? '250px' : '350px', objectFit: 'contain' }}
             />
           </div>
         </div>

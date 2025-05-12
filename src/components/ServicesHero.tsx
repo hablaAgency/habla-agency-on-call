@@ -20,7 +20,7 @@ const ServicesHero = () => {
       <div className="container mx-auto px-4 h-full">
         <div className="flex flex-col md:flex-row items-center justify-between h-full py-20">
           <div className="md:w-1/2 text-black z-10">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <h1 className="text-[72px] font-bold mb-4">
               {currentWord}
               <span className="block mt-2">on demand</span>
             </h1>

@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -5,7 +6,8 @@ import { componentTagger } from "lovable-tagger";
 import { webcrypto as crypto } from 'node:crypto'
 
 if (!globalThis.crypto) {
-  globalThis.crypto = crypto as unknown as Crypto
+  // Use type assertion to tell TypeScript that crypto can be assigned to the global crypto property
+  globalThis.crypto = crypto as unknown as typeof globalThis.crypto;
 }
 
 // https://vitejs.dev/config/

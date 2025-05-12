@@ -18,7 +18,7 @@ const NavBar = () => {
           <img 
             src="/lovable-uploads/0190c96f-f272-4860-9d8a-70cf4384567b.png" 
             alt="habla.agency logo" 
-            className="h-8"
+            className="h-6"
           />
         </a>
 

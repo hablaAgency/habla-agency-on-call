@@ -23,7 +23,7 @@ const Hero = () => {
             <img 
               src="/lovable-uploads/461389c2-f824-4df8-be93-f462910f226a.png"
               alt="Marketing team illustration" 
-              className="w-full md:w-11/12 lg:w-10/12 animate-fade-in"
+              className="w-full animate-fade-in"
               style={{ maxHeight: isMobile ? '250px' : '350px', objectFit: 'contain' }}
             />
           </div>

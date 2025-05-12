@@ -68,6 +68,8 @@
     box-shadow: 0 4px 14px rgba(234, 56, 76, 0.25);
   }
   
+  /* Removing the ::before and ::after pseudo-elements that create the dots */
+  /* 
   .on-call-badge::before {
     content: '';
     position: absolute;
@@ -91,4 +93,5 @@
     right: -6px;
     transform: translateY(-50%);
   }
+  */
 }

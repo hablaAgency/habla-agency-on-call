@@ -11,7 +11,7 @@ const Services = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-left">Results at the snap of your fingers.</h2>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="rounded-full overflow-hidden w-48 h-48 md:w-64 md:h-64">
+            <div className="rounded-full overflow-hidden w-40 h-40 md:w-48 md:h-48">
               <img 
                 src="/lovable-uploads/2d951d1b-0057-47cd-98a5-69a467f9e526.png" 
                 alt="Character with infinity gauntlet" 

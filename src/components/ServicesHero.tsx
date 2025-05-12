@@ -16,10 +16,10 @@ const ServicesHero = () => {
   }, [currentIndex]);
 
   return (
-    <section className="h-screen bg-gradient-to-r from-habla-blue to-blue-300 relative overflow-hidden">
+    <section className="h-screen bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 h-full">
         <div className="flex flex-col md:flex-row items-center justify-between h-full py-20">
-          <div className="md:w-1/2 text-white z-10">
+          <div className="md:w-1/2 text-black z-10">
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
               {currentWord}
               <span className="block mt-2">on demand</span>
@@ -35,7 +35,7 @@ const ServicesHero = () => {
         </div>
       </div>
       {/* Decorative vertical line */}
-      <div className="absolute h-full w-0.5 bg-white/30 left-1/4 transform -translate-x-1/2 z-0"></div>
+      <div className="absolute h-full w-0.5 bg-black/30 left-1/4 transform -translate-x-1/2 z-0"></div>
     </section>
   );
 };

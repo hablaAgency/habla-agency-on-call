@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 import { webcrypto as crypto } from 'node:crypto';
 
 if (!globalThis.crypto) {
-  globalThis.crypto = crypto as unknown as Crypto;
+  globalThis.crypto = crypto;
 }
 
 // https://vitejs.dev/config/
@@ -27,4 +27,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));gitg
+}));

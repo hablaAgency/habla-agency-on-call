@@ -121,6 +121,10 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				'carousel': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -128,7 +132,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'pulse-slow': 'pulse-slow 3s infinite',
-				'float': 'float 6s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'carousel': 'carousel 15s linear infinite'
 			}
 		}
 	},

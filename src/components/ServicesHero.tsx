@@ -22,7 +22,7 @@ const ServicesHero = () => {
           <div className="md:w-1/2 text-black z-10 md:pt-0 pt-8 md:-mt-20">
             <h1 className="text-[72px] font-bold mb-4">
               {currentWord}
-              <span className="block mt-2 text-[#ea384c] text-[80px]">on demand</span>
+              <span className="block mt-0 text-[#ea384c] text-[80px]">on demand</span>
             </h1>
           </div>
           <div className="md:w-1/2 flex justify-center z-10 mt-8 md:mt-0">

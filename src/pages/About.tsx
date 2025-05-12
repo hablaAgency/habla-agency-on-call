@@ -2,18 +2,18 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import About from '../components/About';
+import AboutPage from '../components/AboutPage';
 
-const AboutPage = () => {
+const AboutPageView = () => {
   return (
     <div className="min-h-screen bg-white">
       <NavBar />
       <div className="pt-16">
-        <About />
+        <AboutPage />
       </div>
       <Footer />
     </div>
   );
 };
 
-export default AboutPage;
+export default AboutPageView;

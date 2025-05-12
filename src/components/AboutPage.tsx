@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const AboutPage = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
+  const investmentSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,10 +33,12 @@ const AboutPage = () => {
       observer.observe(cardsRef.current);
     }
 
+    if (investmentSectionRef.current) {
+      observer.observe(investmentSectionRef.current);
+    }
+
     return () => {
-      if (cardsRef.current) {
-        observer.disconnect();
-      }
+      observer.disconnect();
     };
   }, []);
 
@@ -104,7 +107,7 @@ const AboutPage = () => {
           </div>
 
           {/* Nueva sección: Retorno de inversión y resultados sostenibles */}
-          <div className="mb-16">
+          <div ref={investmentSectionRef} className="mb-16">
             <div className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
               <div className="p-8">
                 <div className="flex items-center gap-6 mb-6">

@@ -67,14 +67,6 @@ const AboutPage = () => {
               </CardContent>
             </Card>
           </div>
-          
-          <div className="flex justify-center">
-            <img 
-              src="/lovable-uploads/9ea472df-92a5-4420-8fb8-f416ccbbf785.png" 
-              alt="Equipo Habla Agency" 
-              className="max-w-full h-auto rounded-lg shadow-lg"
-            />
-          </div>
         </div>
       </div>
     </section>

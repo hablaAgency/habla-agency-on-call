@@ -8,29 +8,31 @@ const AboutPage = () => {
     <section className="py-20 px-4 bg-white text-habla-darkGray">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-12 items-center mb-24">
-            <div className="md:w-1/2">
-              <h1 className="text-5xl md:text-6xl font-bold mb-8 text-[#2276c3]">¿Quiénes somos?</h1>
-              
-              <p className="text-lg">
-                En <span className="font-bold">habla.agency</span> somos un equipo de profesionales 
-                apasionados por el marketing digital, la creatividad, y la 
-                innovación. Nuestra misión es ayudar a marcas y 
-                negocios a alcanzar su máximo potencial a través de 
-                estrategias personalizadas y efectivas que conecten con 
-                su audiencia y generen resultados tangibles.
-              </p>
-            </div>
-            <div className="md:w-1/2">
-              <img 
-                src="/lovable-uploads/17f4de34-74f6-444a-ac6b-c545e750cbc3.png" 
-                alt="Habla Agency Team Illustration" 
-                className="w-full h-auto"
-              />
+          <div className="flex flex-col gap-12 mb-20">
+            <div className="flex flex-col md:flex-row gap-12 items-center">
+              <div className="md:w-1/2">
+                <h1 className="text-5xl md:text-6xl font-bold mb-8 text-[#2276c3]">¿Quiénes somos?</h1>
+                
+                <p className="text-lg">
+                  En <span className="font-bold">habla.agency</span> somos un equipo de profesionales 
+                  apasionados por el marketing digital, la creatividad, y la 
+                  innovación. Nuestra misión es ayudar a marcas y 
+                  negocios a alcanzar su máximo potencial a través de 
+                  estrategias personalizadas y efectivas que conecten con 
+                  su audiencia y generen resultados tangibles.
+                </p>
+              </div>
+              <div className="md:w-1/2">
+                <img 
+                  src="/lovable-uploads/6c742358-60c2-47e6-88c4-ce2cda7b8df4.png" 
+                  alt="Habla Agency Illustration" 
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
               <CardContent className="p-8">
                 <div className="mb-4 text-[#2276c3]">
@@ -75,14 +77,6 @@ const AboutPage = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-          
-          <div className="flex justify-center">
-            <img 
-              src="/lovable-uploads/9ea472df-92a5-4420-8fb8-f416ccbbf785.png" 
-              alt="Equipo Habla Agency" 
-              className="max-w-full h-auto"
-            />
           </div>
         </div>
       </div>

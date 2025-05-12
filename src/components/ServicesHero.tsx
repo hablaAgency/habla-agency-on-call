@@ -47,10 +47,10 @@ const ServicesHero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between h-full pt-0 pb-24">
           <div className="md:w-1/2 text-black z-10 md:pt-0 pt-8 md:-mt-20">
             <h1 className="text-[72px] font-bold mb-4">
-              <span className="flex items-center">
-                {displayText}
+              <div className="h-16 flex items-center">
+                <span>{displayText}</span>
                 <span className={`h-16 w-[5px] bg-black ml-1 inline-block ${isTyping ? 'animate-[pulse_1s_infinite]' : 'opacity-0'}`}></span>
-              </span>
+              </div>
               <span className="block -mt-4 text-[#ea384c] text-[80px]">on demand</span>
             </h1>
           </div>

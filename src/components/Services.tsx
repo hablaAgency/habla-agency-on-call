@@ -6,7 +6,21 @@ const Services = () => {
   return (
     <section id="servicios" className="py-20 px-4 bg-white">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Results at the snap of your fingers.</h2>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-left">Results at the snap of your fingers.</h2>
+          </div>
+          <div className="md:w-1/2 flex justify-center">
+            <div className="rounded-full overflow-hidden w-64 h-64 md:w-80 md:h-80">
+              <img 
+                src="/lovable-uploads/2d951d1b-0057-47cd-98a5-69a467f9e526.png" 
+                alt="Character with infinity gauntlet" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="mt-16 grid md:grid-cols-2 gap-8">
           <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
             <CardHeader>

@@ -73,16 +73,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
       
-      <div className="container mx-auto mt-16">
-        <div className="max-w-6xl mx-auto flex justify-center">
-          <img 
-            src="/lovable-uploads/9ea472df-92a5-4420-8fb8-f416ccbbf785.png" 
-            alt="Equipo Habla Agency" 
-            className="max-w-full h-auto"
-          />
-        </div>
-      </div>
     </section>
   );
 };

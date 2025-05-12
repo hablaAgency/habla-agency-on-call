@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -25,6 +25,10 @@ const NavBar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
+          <Link to="/" className="text-habla-darkGray hover:text-habla-blue transition-colors flex items-center gap-1">
+            <Home size={18} />
+            Home
+          </Link>
           <Link to="/servicios" className="text-habla-darkGray hover:text-habla-blue transition-colors">
             Servicios
           </Link>
@@ -55,6 +59,14 @@ const NavBar = () => {
       {isMenuOpen && (
         <nav className="md:hidden bg-white py-4 px-6 shadow-md">
           <div className="flex flex-col space-y-4">
+            <Link
+              to="/" 
+              className="text-habla-darkGray hover:text-habla-blue transition-colors py-2 flex items-center gap-1"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Home size={18} />
+              Home
+            </Link>
             <Link
               to="/servicios" 
               className="text-habla-darkGray hover:text-habla-blue transition-colors py-2"

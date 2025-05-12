@@ -1,9 +1,44 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MessageSquare, ShieldCheck, Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const AboutPage = () => {
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Añadir las clases de animación cuando las cards entren en el viewport
+            const cards = entry.target.querySelectorAll('.card-animate');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('animate-fade-in');
+                card.classList.remove('opacity-0');
+              }, index * 150); // Añadir un pequeño retraso entre cada card
+            });
+            
+            // Dejar de observar una vez que las cards ya se han animado
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 } // Empezar la animación cuando el 20% del elemento es visible
+    );
+
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+
+    return () => {
+      if (cardsRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+
   return (
     <section className="py-20 px-4 bg-white text-habla-darkGray">
       <div className="container mx-auto">
@@ -21,8 +56,8 @@ const AboutPage = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
+          <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
               <CardContent className="p-8">
                 <div className="mb-4 text-[#2276c3]">
                   <MessageSquare size={40} />
@@ -37,7 +72,7 @@ const AboutPage = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
+            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
               <CardContent className="p-8">
                 <div className="mb-4 text-[#2276c3]">
                   <ShieldCheck size={40} />
@@ -51,7 +86,7 @@ const AboutPage = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
+            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
               <CardContent className="p-8">
                 <div className="mb-4 text-[#2276c3]">
                   <Star size={40} />

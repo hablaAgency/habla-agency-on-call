@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-            <span>Your marketing dream team</span>
+            <div className="whitespace-nowrap">Your marketing dream team</div>
             <div className="flex items-center justify-center mt-4">
               <span className="on-call-badge animate-pulse-slow">on call</span>
             </div>

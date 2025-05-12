@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <NavBar />
-      <div className="pt-24">
+      <div className="pt-16">
         <About />
       </div>
       <Footer />

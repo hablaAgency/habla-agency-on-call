@@ -1,33 +1,82 @@
 
 import React from 'react';
+import { MessageSquare, ShieldCheck, Star } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const About = () => {
   return (
-    <section id="nosotros" className="py-20 px-4 bg-gradient-to-br from-habla-blue to-habla-lightBlue text-white">
+    <section id="nosotros" className="py-20 px-4 bg-white text-habla-darkGray">
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Nosotros</h2>
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-[#2276c3]">¿Quiénes somos?</h1>
           
-          <div className="space-y-6 text-lg">
-            <p>
-              Somos una empresa en constante evolución con alma de startup y músculo de corporación. En habla.agency fusionamos la agilidad y la innovación con la solidez y la experiencia. Nos focalizamos obsesivamente en resultados, tratando a cada cliente como si fuera el único. Nuestro compromiso con la calidad nunca está reñido con los tiempos de entrega, porque entendemos que en el mundo digital, la velocidad y la excelencia deben ir de la mano.
-            </p>
-            <p>
-              Creemos firmemente en el poder del buen humor y las relaciones genuinas como catalizadores del éxito. Respaldados por un equipo talentoso y apasionado, convertimos desafíos en oportunidades y urgencias en soluciones brillantes.
+          <div className="mb-16">
+            <p className="text-lg">
+              En <span className="font-bold">habla.agency</span> somos un equipo de profesionales 
+              apasionados por el marketing digital, la creatividad, y la 
+              innovación. Nuestra misión es ayudar a marcas y 
+              negocios a alcanzar su máximo potencial a través de 
+              estrategias personalizadas y efectivas que conecten con 
+              su audiencia y generen resultados tangibles.
             </p>
           </div>
           
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="aspect-square bg-white/10 rounded-lg flex items-center justify-center p-4">
-                <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="35" r="15" stroke="white" strokeWidth="2" fill="none" />
-                  <path d="M30,75 Q50,60 70,75" stroke="white" strokeWidth="2" fill="none" />
-                  <path d="M30,35 L30,45 M70,35 L70,45" stroke="white" strokeWidth="2" fill="none" />
-                </svg>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <Card className="bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
+              <CardContent className="p-8">
+                <div className="mb-4 text-[#2276c3]">
+                  <MessageSquare size={40} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#2276c3]">Transparencia y comunicación</h3>
+                <p className="text-gray-600">
+                  Nos enorgullece mantener una comunicación clara y constante con 
+                  nuestros clientes. Creemos en la colaboración abierta y en compartir 
+                  cada paso del proceso, para que siempre sepas cómo y dónde se está 
+                  invirtiendo tu tiempo y dinero.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
+              <CardContent className="p-8">
+                <div className="mb-4 text-[#2276c3]">
+                  <ShieldCheck size={40} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#2276c3]">Sin dolores de cabeza</h3>
+                <p className="text-gray-600">
+                  Olvídate de contratar, capacitar, tasas de rotación o días de enfermedad. 
+                  Solo enfócate en tus necesidades y disfruta de todos los resultados sin 
+                  complicaciones.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
+              <CardContent className="p-8">
+                <div className="mb-4 text-[#2276c3]">
+                  <Star size={40} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#2276c3]">Talento top</h3>
+                <p className="text-gray-600">
+                  Contamos con un equipo de profesionales altamente capacitados: 
+                  diseñadores gráficos, licenciados en marketing y comunicación, 
+                  especialistas en desarrollo web, entre otros. Nos enfocamos en trabajar con 
+                  personas que no solo dominan su campo, sino que también sienten 
+                  verdadera pasión por lo que hacen.
+                </p>
+              </CardContent>
+            </Card>
           </div>
+        </div>
+      </div>
+      
+      <div className="container mx-auto mt-16">
+        <div className="max-w-6xl mx-auto flex justify-center">
+          <img 
+            src="/lovable-uploads/9ea472df-92a5-4420-8fb8-f416ccbbf785.png" 
+            alt="Equipo Habla Agency" 
+            className="max-w-full h-auto"
+          />
         </div>
       </div>
     </section>

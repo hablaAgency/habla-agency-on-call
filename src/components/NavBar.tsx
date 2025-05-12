@@ -14,9 +14,12 @@ const NavBar = () => {
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="text-habla-blue font-bold text-2xl flex items-center">
-          <span className="text-habla-red">habla</span>
-          <span className="text-habla-blue">.agency</span>
+        <a href="#hero" className="flex items-center">
+          <img 
+            src="/lovable-uploads/0190c96f-f272-4860-9d8a-70cf4384567b.png" 
+            alt="habla.agency logo" 
+            className="h-8"
+          />
         </a>
 
         {/* Desktop Navigation */}

@@ -16,7 +16,7 @@ const ServicesHero = () => {
   }, [currentIndex]);
 
   return (
-    <section className="min-h-[70vh] bg-gradient-to-r from-habla-blue to-blue-300 relative overflow-hidden">
+    <section className="h-screen bg-gradient-to-r from-habla-blue to-blue-300 relative overflow-hidden">
       <div className="container mx-auto px-4 h-full">
         <div className="flex flex-col md:flex-row items-center justify-between h-full py-20">
           <div className="md:w-1/2 text-white z-10">

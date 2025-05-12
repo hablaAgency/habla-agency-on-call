@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { MessageSquare, ShieldCheck, Star } from 'lucide-react';
+import { MessageSquare, ShieldCheck, Star, BarChart } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const AboutPage = () => {
@@ -101,6 +101,27 @@ const AboutPage = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Nueva sección: Retorno de inversión y resultados sostenibles */}
+          <div className="mb-16">
+            <div className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
+              <div className="p-8">
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="text-[#2276c3]">
+                    <BarChart size={40} />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#2276c3]">Retorno de inversión y resultados sostenibles</h3>
+                </div>
+                <p className="text-gray-600">
+                  Entendemos que, al final del día, lo único que importa es un excelente resultado final. 
+                  Por eso, no solo nos enfocamos en ofrecerte tarifas competitivas, sino también en 
+                  construir estrategias a largo plazo que maximicen tu retorno de inversión de manera sostenible. 
+                  Nuestro objetivo es asegurarnos de que cada acción tenga un impacto duradero en el 
+                  crecimiento de tu negocio, generando beneficios que perduren con el tiempo y se adapten a futuros desafíos.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

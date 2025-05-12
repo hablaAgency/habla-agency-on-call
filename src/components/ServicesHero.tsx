@@ -18,8 +18,8 @@ const ServicesHero = () => {
   return (
     <section className="h-screen bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 h-full">
-        <div className="flex flex-col md:flex-row items-center justify-between h-full py-20">
-          <div className="md:w-1/2 text-black z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between h-full py-12">
+          <div className="md:w-1/2 text-black z-10 md:pt-0 pt-16">
             <h1 className="text-[72px] font-bold mb-4">
               {currentWord}
               <span className="block mt-2">on demand</span>

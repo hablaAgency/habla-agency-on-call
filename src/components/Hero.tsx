@@ -15,19 +15,19 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
             <div className={isMobile ? "" : "whitespace-nowrap"}>Your marketing dream team</div>
             <div className="flex items-center justify-center mt-4">
-              <span className="on-call-badge animate-pulse-slow">on call</span>
+              <span className="on-call-badge text-xs md:text-sm animate-pulse-slow px-2 py-1">on call</span>
             </div>
           </h1>
           
-          <div className="mt-8 w-full">
+          <div className="mt-8 w-full flex justify-center">
             <img 
               src="/lovable-uploads/461389c2-f824-4df8-be93-f462910f226a.png"
               alt="Marketing team illustration" 
-              className="w-full animate-fade-in"
+              className="w-auto animate-fade-in"
               style={{ 
-                maxHeight: isMobile ? '500px' : '800px', 
+                maxHeight: isMobile ? '400px' : '650px', 
                 objectFit: 'contain',
-                width: '100%'
+                maxWidth: '90%'
               }}
             />
           </div>

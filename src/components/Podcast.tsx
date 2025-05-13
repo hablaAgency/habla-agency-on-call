@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Youtube, Music, Play, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -180,8 +181,8 @@ const Podcast = () => {
           </div>
         </div>
 
-        {/* Episodes carousel - increased height */}
-        <div className="mb-20 min-h-[80vh] flex flex-col justify-center">
+        {/* Episodes carousel - setting to 100vh height */}
+        <div className="mb-20 min-h-[100vh] flex flex-col justify-center">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold">Episodios</h2>
           </div>
@@ -258,9 +259,9 @@ const Podcast = () => {
                     <Button 
                       variant="ghost" 
                       size="sm"
-                      className="hover:text-white group"
+                      className="hover:bg-transparent group"
                     >
-                      <Play className="h-4 w-4 text-current" />
+                      <Play className="h-4 w-4 text-current group-hover:text-white" />
                     </Button>
                   </TableCell>
                 </TableRow>

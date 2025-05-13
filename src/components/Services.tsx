@@ -27,6 +27,45 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
     { name: 'Transformación digital y CRM', icon: <ArrowsUpFromLine size={40} /> },
   ];
 
+  const portfolioItems = [
+    {
+      title: "Kubica",
+      description: "Estrategia digital para inmobiliaria de lujo",
+      category: "Estrategia Digital",
+      image: "/lovable-uploads/461389c2-f824-4df8-be93-f462910f226a.png"
+    },
+    {
+      title: "Mamba",
+      description: "Modernización de marca y crecimiento digital",
+      category: "Branding y Marketing",
+      image: "/lovable-uploads/5a12bd78-b4c3-4827-a7d4-29c6c95928c1.png"
+    },
+    {
+      title: "Bodega Miras",
+      description: "Estrategia de comunicación y marketing",
+      category: "Comunicación",
+      image: "/lovable-uploads/5bb97689-6cfd-474b-97f0-2ce9cdc76f63.png"
+    },
+    {
+      title: "Coleman",
+      description: "Campañas de marketing estacionales",
+      category: "Campañas Digitales",
+      image: "/lovable-uploads/6c742358-60c2-47e6-88c4-ce2cda7b8df4.png"
+    },
+    {
+      title: "Pernod Ricard",
+      description: "Estrategia integral de comunicación",
+      category: "Comunicación y Marketing",
+      image: "/lovable-uploads/9ea472df-92a5-4420-8fb8-f416ccbbf785.png"
+    },
+    {
+      title: "Aperol",
+      description: "Campañas y eventos digitales",
+      category: "Marketing Digital",
+      image: "/lovable-uploads/fc5c94ad-1ddd-4fc4-86ce-ea07935f27c4.png"
+    }
+  ];
+
   return (
     <>
       {/* First section with the blue pattern background - Only show on Services page */}
@@ -93,6 +132,42 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
                 <div key={index} className="flex flex-col items-center text-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <div className="mb-3 text-habla-blue">{service.icon}</div>
                   <span className="text-sm font-medium">{service.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Portfolio section - Only show on Services page */}
+      {!isHomePage && (
+        <section className="py-20 px-4 bg-white">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">Nuestros trabajos</h3>
+              <p className="text-xl font-semibold text-habla-blue">Casos de éxito que hablan por nosotros</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {portfolioItems.map((item, index) => (
+                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                      <span className="text-white text-sm font-medium bg-habla-blue px-3 py-1 rounded-full inline-block mb-2 w-fit">{item.category}</span>
+                      <h4 className="text-white text-xl font-bold">{item.title}</h4>
+                      <p className="text-white/90 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <span className="text-habla-blue text-xs font-medium uppercase tracking-wider">{item.category}</span>
+                    <h4 className="font-bold text-xl mt-1 mb-2">{item.title}</h4>
+                    <p className="text-gray-600 text-sm">{item.description}</p>
+                  </div>
                 </div>
               ))}
             </div>

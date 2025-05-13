@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { MessageSquare, ShieldCheck, Star, BarChart } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const AboutPage = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -46,17 +47,30 @@ const AboutPage = () => {
     <section className="py-20 px-4 bg-white text-habla-darkGray">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-[#2276c3]">¿Quiénes somos?</h1>
-            
-            <p className="text-lg">
-              En <span className="font-bold">habla.agency</span> somos un equipo de profesionales 
-              apasionados por el marketing digital, la creatividad, y la 
-              innovación. Nuestra misión es ayudar a marcas y 
-              negocios a alcanzar su máximo potencial a través de 
-              estrategias personalizadas y efectivas que conecten con 
-              su audiencia y generen resultados tangibles.
-            </p>
+          <div className="mb-16 flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/2">
+              <h1 className="text-5xl md:text-6xl font-bold mb-8 text-[#2276c3]">¿Quiénes somos?</h1>
+              
+              <p className="text-lg">
+                En <span className="font-bold">habla.agency</span> somos un equipo de profesionales 
+                apasionados por el marketing digital, la creatividad, y la 
+                innovación. Nuestra misión es ayudar a marcas y 
+                negocios a alcanzar su máximo potencial a través de 
+                estrategias personalizadas y efectivas que conecten con 
+                su audiencia y generen resultados tangibles.
+              </p>
+            </div>
+            <div className="md:w-1/2 animate-fade-in">
+              <div className="relative w-full max-w-md mx-auto">
+                <AspectRatio ratio={1}>
+                  <img 
+                    src="/lovable-uploads/e45f0afe-c2ce-401c-bdf5-eeb82bc79c2d.png" 
+                    alt="Equipo de Habla Agency" 
+                    className="rounded-lg object-contain"
+                  />
+                </AspectRatio>
+              </div>
+            </div>
           </div>
           
           <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 mb-16">

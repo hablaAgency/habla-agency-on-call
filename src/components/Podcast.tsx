@@ -233,7 +233,7 @@ const Podcast = () => {
           </Carousel>
         </div>
 
-        {/* Episode list table for desktop */}
+        {/* Episode list table for desktop - Updated with YouTube and Spotify icons */}
         <div className="hidden lg:block mt-16 bg-white rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.15)] overflow-hidden">
           <h2 className="text-2xl font-bold p-6 border-b">Todos los episodios</h2>
           <Table>
@@ -242,7 +242,7 @@ const Podcast = () => {
                 <TableHead className="w-16">#</TableHead>
                 <TableHead>Título</TableHead>
                 <TableHead>Invitado</TableHead>
-                <TableHead className="text-right">Escuchar</TableHead>
+                <TableHead className="text-right">Escuchar en</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -255,13 +255,24 @@ const Podcast = () => {
                   <TableCell className="font-medium">{episode.title}</TableCell>
                   <TableCell>{episode.guest}</TableCell>
                   <TableCell className="text-right">
-                    <Button 
-                      variant="ghost" 
-                      size="sm"
-                      className="hover:bg-transparent group"
-                    >
-                      <Play className="h-4 w-4 text-current group-hover:text-white" />
-                    </Button>
+                    <div className="flex gap-2 justify-end">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        className="hover:bg-transparent group"
+                        onClick={() => window.open('https://www.youtube.com/@habla.agency', '_blank')}
+                      >
+                        <Youtube className="h-5 w-5 text-current group-hover:text-white" />
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        className="hover:bg-transparent group"
+                        onClick={() => window.open('https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS', '_blank')}
+                      >
+                        <Music className="h-5 w-5 text-current group-hover:text-white" />
+                      </Button>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

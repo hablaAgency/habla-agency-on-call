@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   TrendingUp, Lightbulb, Instagram, Megaphone, 
   Code, Search, Palette, Film, Handshake, 
-  Newspaper, ArrowsUpFromLine, Smartphone
+  Newspaper, ArrowsUpFromLine, Smartphone, Phone
 } from 'lucide-react';
 
 const Services = () => {
@@ -29,9 +29,9 @@ const Services = () => {
       <section 
         className="py-20"
         style={{
-          backgroundColor: "#1EAEDB", // Solid blue background color
-          backgroundImage: "linear-gradient(135deg, rgba(51, 195, 240, 0.3) 25%, transparent 25%, transparent 50%, rgba(51, 195, 240, 0.3) 50%, rgba(51, 195, 240, 0.3) 75%, transparent 75%, transparent)",
-          backgroundSize: "40px 40px", // Pattern size
+          backgroundImage: "url('/lovable-uploads/657c7256-5a30-4dba-9fa4-1f163d3f5012.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="container mx-auto max-w-6xl px-4 md:px-8">
@@ -62,11 +62,11 @@ const Services = () => {
             </div>
             <div className="md:w-2/5 flex justify-center">
               <div className="w-1/2 md:w-64 h-auto flex items-center justify-center">
-                <svg width="100" height="160" viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="20" y="10" width="60" height="140" rx="10" stroke="white" strokeWidth="4"/>
-                  <rect x="35" y="20" width="30" height="5" rx="2.5" fill="white"/>
-                  <rect x="30" y="130" width="40" height="10" rx="5" fill="white"/>
-                </svg>
+                <img 
+                  src="/lovable-uploads/b13da488-e6bb-4760-849b-94fdc9247d53.png" 
+                  alt="Teléfono" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>

@@ -29,9 +29,9 @@ const Services = () => {
       <section 
         className="py-20"
         style={{
-          backgroundImage: "url('/lovable-uploads/5bb97689-6cfd-474b-97f0-2ce9cdc76f63.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundColor: "#1EAEDB", // Solid blue background color
+          backgroundImage: "linear-gradient(135deg, rgba(51, 195, 240, 0.3) 25%, transparent 25%, transparent 50%, rgba(51, 195, 240, 0.3) 50%, rgba(51, 195, 240, 0.3) 75%, transparent 75%, transparent)",
+          backgroundSize: "40px 40px", // Pattern size
         }}
       >
         <div className="container mx-auto max-w-6xl px-4 md:px-8">
@@ -61,11 +61,13 @@ const Services = () => {
               </div>
             </div>
             <div className="md:w-2/5 flex justify-center">
-              <img 
-                src="/lovable-uploads/5bb97689-6cfd-474b-97f0-2ce9cdc76f63.png" 
-                alt="Teléfono" 
-                className="w-1/2 md:w-64 h-auto object-contain invisible" 
-              />
+              <div className="w-1/2 md:w-64 h-auto flex items-center justify-center">
+                <svg width="100" height="160" viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" y="10" width="60" height="140" rx="10" stroke="white" strokeWidth="4"/>
+                  <rect x="35" y="20" width="30" height="5" rx="2.5" fill="white"/>
+                  <rect x="30" y="130" width="40" height="10" rx="5" fill="white"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -75,7 +77,7 @@ const Services = () => {
       <section className="py-20 px-4 bg-gray-100">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-3">¿Qué podemos hacer por tu marca?</h3>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">¿Qué podemos hacer por tu marca?</h3>
             <p className="text-xl font-semibold text-habla-blue">Todo esto. Y más.</p>
           </div>
 

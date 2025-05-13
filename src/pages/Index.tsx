@@ -6,7 +6,7 @@ import Intro from '../components/Intro';
 import Testimonials from '../components/Testimonials';
 import Services from '../components/Services';
 import About from '../components/About';
-import Podcast from '../components/Podcast';
+import HomePodcast from '../components/HomePodcast';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -19,7 +19,7 @@ const Index = () => {
       <Testimonials />
       <Services isHomePage={true} />
       <About />
-      <Podcast />
+      <HomePodcast />
       <Contact />
       <Footer />
     </div>

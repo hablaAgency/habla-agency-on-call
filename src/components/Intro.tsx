@@ -16,10 +16,11 @@ const Intro = () => {
           
           <div className="mt-10">
             <Button 
-              className="bg-habla-red hover:bg-red-600 text-white px-8 py-6 rounded-md text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="bg-habla-red hover:bg-red-600 text-white px-8 py-6 rounded-md text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
             >
-              ¡HAZ CLIC AHORA!
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <span className="relative z-10">¡HAZ CLIC AHORA!</span>
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-habla-red opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
             <p className="mt-3 text-sm text-gray-500">No esperes más para transformar tu negocio</p>
           </div>

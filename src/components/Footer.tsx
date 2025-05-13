@@ -11,8 +11,11 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0">
             <Link to="/" className="text-white font-bold text-xl flex items-center">
-              <span className="text-habla-red">habla</span>
-              <span className="text-white">.agency</span>
+              <img 
+                src="/lovable-uploads/7ef08172-49e2-439b-87e7-9023ba1e2df0.png" 
+                alt="Habla Agency Logo" 
+                className="h-8" 
+              />
             </Link>
           </div>
           

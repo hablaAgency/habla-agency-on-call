@@ -27,16 +27,16 @@ const ContactPage = () => {
           
           {/* Left side - Title and text */}
           <div className="text-white self-start">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 max-w-md leading-tight">
               Es momento de alcanzar tus objetivos
             </h1>
             
             <p className="text-lg mb-8">
-              Queremos construir nuestro próximo caso de éxito, queremos construir nuestro próximo caso de éxito.
+              Queremos construir nuestro próximo caso de éxito!
             </p>
 
             <div className="mt-10">
-              <h3 className="text-xl font-semibold mb-6">Encuéntranos en</h3>
+              <h3 className="text-xl font-semibold mb-6">Encontranos en</h3>
               
               <div className="space-y-6">
                 <a 
@@ -85,9 +85,9 @@ const ContactPage = () => {
               </div>
               
               <div className="mt-10">
-                <p className="text-lg">¿Prefieres escribirnos directamente?</p>
-                <a href="mailto:info@habla.agency" className="text-white hover:underline font-semibold">
-                  info@habla.agency
+                <p className="text-lg">¿Preferís escribirnos directamente?</p>
+                <a href="mailto:hola@habla.agency" className="text-white hover:underline font-semibold">
+                  hola@habla.agency
                 </a>
               </div>
             </div>

@@ -152,7 +152,7 @@ const Podcast = () => {
             <img 
               src="/lovable-uploads/04ce224b-e9db-45f5-a79a-934241c4ce1f.png" 
               alt="Un café con habla.agency" 
-              className={`w-full h-auto rounded-lg shadow-[0_10px_20px_rgba(0,0,0,0.25)] relative z-10 transition-all duration-700 transform ${isHeroVisible ? 'translate-x-0 opacity-100' : 'translate-x-32 opacity-0'}`}
+              className={`w-full h-auto rounded-lg shadow-[0_10px_20px_rgba(0,0,0,0.25)] relative z-10 transition-all duration-1000 transform ${isHeroVisible ? 'translate-x-0 opacity-100' : 'translate-x-32 opacity-0'}`}
             />
             <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] z-20">
               <img 
@@ -170,7 +170,7 @@ const Podcast = () => {
             <img 
               src="/lovable-uploads/0968423a-acf9-4fc8-857f-4784d1f76e9f.png" 
               alt="Un café con habla.agency mobile app" 
-              className={`w-auto h-[70vh] max-w-full shadow-[0_10px_20px_rgba(0,0,0,0.25)] transition-all duration-700 transform ${isPhoneVisible ? 'translate-x-0 opacity-100' : '-translate-x-32 opacity-0'}`}
+              className={`w-auto h-[70vh] max-w-full transition-all duration-1000 delay-300 transform ${isPhoneVisible ? 'translate-x-0 opacity-100' : '-translate-x-32 opacity-0'}`}
             />
           </div>
           <div className="md:w-1/2">

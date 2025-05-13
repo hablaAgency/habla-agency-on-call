@@ -110,9 +110,9 @@ const AboutPage = () => {
           <div ref={investmentSectionRef} className="mb-16">
             <div className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
               <div className="p-8">
-                <div className="flex items-center gap-6 mb-6">
-                  <div className="text-[#2276c3]">
-                    <BarChart size={40} />
+                <div className="flex flex-col items-center text-center mb-6">
+                  <div className="text-[#2276c3] mb-4">
+                    <BarChart size={48} />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-[#2276c3]">Retorno de inversión y resultados sostenibles</h3>
                 </div>

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Youtube, Music, Play, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,7 +12,7 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 
-// Episode data
+// Episode data - corrected episode numbers
 const episodes = [
   {
     id: 1,
@@ -44,11 +43,18 @@ const episodes = [
     image: "/lovable-uploads/ad9c7fdf-f00c-4097-965b-14772a96b9e3.png",
   },
   {
-    id: 6,
-    number: "#6",
+    id: 5,
+    number: "#5",
     title: "El puente entre la ciencia y el dinero",
     guest: "Nicolás Sujovolsky",
     image: "/lovable-uploads/913b93d1-12e1-47ba-9217-fb9e5feb3c31.png",
+  },
+  {
+    id: 6,
+    number: "#6", 
+    title: "¿Cómo convertir tu pasión en una marca exitosa?",
+    guest: "Dai Altamura",
+    image: "/lovable-uploads/a510c097-ccc8-4234-b9e4-472f86b31c0e.png",
   },
   {
     id: 7,
@@ -70,13 +76,6 @@ const episodes = [
     title: "El arte de animar y emprender - La historia de Búho",
     guest: "Ezequiel Adatto",
     image: "/lovable-uploads/15cbd167-3c81-49ed-82a3-a14a5d87fc6b.png",
-  },
-  {
-    id: 10,
-    number: "#10",
-    title: "¿Cómo convertir tu pasión en una marca exitosa?",
-    guest: "Dai Altamura",
-    image: "/lovable-uploads/a510c097-ccc8-4234-b9e4-472f86b31c0e.png",
   }
 ];
 
@@ -261,7 +260,7 @@ const Podcast = () => {
                       size="sm"
                       className="hover:text-white group"
                     >
-                      <Play className="h-4 w-4" />
+                      <Play className="h-4 w-4 text-current" />
                     </Button>
                   </TableCell>
                 </TableRow>

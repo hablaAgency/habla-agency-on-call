@@ -21,7 +21,7 @@ const episodes = [
     guest: "Florencia Merino",
     image: "/lovable-uploads/96b88a0e-893c-4331-bbc3-9dfbf5050406.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS" // Generic until specific URL is provided
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz" 
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const episodes = [
     guest: "Rafael Acuña Ríos",
     image: "/lovable-uploads/dbce036c-d824-4f5a-8fc4-34b2811f4983.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const episodes = [
     guest: "Gustavo Eduardo",
     image: "/lovable-uploads/226c62d9-468b-4625-ad87-3299e0d42481.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const episodes = [
     guest: "Fabián Chernizky",
     image: "/lovable-uploads/ad9c7fdf-f00c-4097-965b-14772a96b9e3.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const episodes = [
     guest: "Nicolás Sujovolsky",
     image: "/lovable-uploads/913b93d1-12e1-47ba-9217-fb9e5feb3c31.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const episodes = [
     guest: "Dai Altamura",
     image: "/lovable-uploads/a510c097-ccc8-4234-b9e4-472f86b31c0e.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const episodes = [
     guest: "Agustín Salamone",
     image: "/lovable-uploads/e3b0639f-e590-4e90-8180-8248160e18b4.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ const episodes = [
     guest: "Diego Balboni",
     image: "/lovable-uploads/2e10e36b-a9ca-4300-82ad-e0b6ec69c24f.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   },
   {
     id: 9,
@@ -93,7 +93,7 @@ const episodes = [
     guest: "Ezequiel Adatto",
     image: "/lovable-uploads/15cbd167-3c81-49ed-82a3-a14a5d87fc6b.png",
     youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
-    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
+    spotifyUrl: "https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
   }
 ];
 
@@ -157,7 +157,7 @@ const Podcast = () => {
               <Button 
                 variant="outline" 
                 className="flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition-colors px-8 py-6 shadow-lg hover:shadow-xl"
-                onClick={() => window.open('https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS', '_blank')}
+                onClick={() => window.open('https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz', '_blank')}
               >
                 <Music className="h-5 w-5" />
                 <span>Spotify</span>
@@ -315,7 +315,7 @@ const Podcast = () => {
               </Button>
               <Button 
                 className="bg-white text-green-600 hover:bg-gray-100 flex items-center gap-3 text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
-                onClick={() => window.open('https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS', '_blank')}
+                onClick={() => window.open('https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz', '_blank')}
               >
                 <Music size={24} className="text-green-600" />
                 <span>Seguir en Spotify</span>

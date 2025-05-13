@@ -136,7 +136,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
         <>
           <section 
             ref={firstSectionRef}
-            className="py-20 opacity-0 transition-all duration-700"
+            className="py-20 opacity-0 transition-all duration-700 min-h-screen flex items-center"
             style={{
               backgroundImage: "url('/lovable-uploads/657c7256-5a30-4dba-9fa4-1f163d3f5012.png')",
               backgroundSize: "cover",
@@ -186,7 +186,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
 
       {/* Second section with the gray background for services icons - Only show on Services page */}
       {!isHomePage && (
-        <section ref={servicesSectionRef} className="py-20 px-4 bg-gray-100">
+        <section ref={servicesSectionRef} className="py-20 px-4 bg-gray-100 min-h-screen">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12 opacity-0 animate-fade-in">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">¿Qué podemos hacer por tu marca?</h3>

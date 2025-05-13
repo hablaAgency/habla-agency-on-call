@@ -22,7 +22,7 @@ const Hero = () => {
               <div className={isMobile ? "" : "whitespace-nowrap"}>Tu marketing dream team</div>
               <div className="flex items-center justify-center mt-4 gap-2">
                 <span className="text-habla-red">a una</span>
-                <span className="text-habla-blue">
+                <span className="text-habla-red">
                   llamada
                 </span>
               </div>

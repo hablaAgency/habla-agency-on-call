@@ -36,32 +36,32 @@ const Services = () => {
       >
         <div className="container mx-auto max-w-6xl px-4 md:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            <div className="md:w-2/5 mb-8 md:mb-0">
+              <h2 className="text-xl md:text-2xl font-bold mb-4 text-white">
                 Somos tu primer llamado.
                 <br />
                 Y también el único que vas a necesitar
               </h2>
-              <div className="space-y-3">
-                <p className="text-sm md:text-base text-white">
+              <div className="space-y-2">
+                <p className="text-xs md:text-sm text-white">
                   Sabemos que hacer crecer un negocio en el entorno digital puede 
                   parecer complejo. Por eso, en nuestra agencia no solo te acompañamos: 
                   te resolvemos todo.
                 </p>
-                <p className="text-sm md:text-base text-white">
+                <p className="text-xs md:text-sm text-white">
                   No importa si necesitás posicionar tu marca, vender más, optimizar 
                   procesos o simplemente dejar de sentir que estás solo. Somos ese 
                   equipo de especialistas que trabaja detrás de escena para que todo 
                   funcione.
                 </p>
-                <p className="text-sm md:text-base text-white">
+                <p className="text-xs md:text-sm text-white">
                   Nuestra propuesta es integral. Te brindamos una solución a medida, 
                   diseñada con estrategia, creatividad y foco en resultados.
                 </p>
               </div>
             </div>
-            <div className="md:w-1/2 flex justify-center">
-              <div className="w-3/4 md:w-80 h-auto flex items-center justify-center">
+            <div className="md:w-3/5 flex justify-center">
+              <div className="w-full md:w-96 h-auto flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/b13da488-e6bb-4760-849b-94fdc9247d53.png" 
                   alt="Teléfono" 

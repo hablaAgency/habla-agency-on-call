@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Youtube, Music, Play, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -197,9 +196,9 @@ const Podcast = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {episodes.map((episode) => (
-                <CarouselItem key={`carousel-${episode.number}-${episode.guest}`} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <CarouselItem key={`carousel-${episode.number}-${episode.guest}`} className="pl-2 md:pl-4 sm:basis-1/1 md:basis-1/2 lg:basis-1/3">
                   <Card className="overflow-hidden transition-all duration-300 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] h-full shadow-[0_5px_15px_rgba(0,0,0,0.2)]">
-                    <div className="relative h-48 overflow-hidden bg-gray-200">
+                    <div className="relative h-64 overflow-hidden bg-gray-200">
                       <img 
                         src={episode.image} 
                         alt={`Episodio ${episode.number} con ${episode.guest}`}
@@ -213,8 +212,8 @@ const Podcast = () => {
                         NUEVO
                       </div>
                     </div>
-                    <CardContent className="p-4">
-                      <h3 className="font-bold line-clamp-2 mb-2">{episode.title}</h3>
+                    <CardContent className="p-6">
+                      <h3 className="font-bold text-lg line-clamp-2 mb-4">{episode.title}</h3>
                       <Button 
                         variant="outline" 
                         size="sm" 

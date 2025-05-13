@@ -1,10 +1,9 @@
-
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   TrendingUp, Lightbulb, Instagram, Megaphone, 
   Code, Search, Palette, Film, Handshake, 
-  Newspaper, ArrowsUpFromLine, Smartphone
+  Newspaper, ArrowsUpFromLine, Smartphone, ChevronDown
 } from 'lucide-react';
 
 interface ServicesProps {
@@ -12,6 +11,70 @@ interface ServicesProps {
 }
 
 const Services = ({ isHomePage = false }: ServicesProps) => {
+  const firstSectionRef = useRef<HTMLDivElement>(null);
+  const servicesSectionRef = useRef<HTMLDivElement>(null);
+  const portfolioSectionRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    if (isHomePage) return; // Only apply animations on Services page
+    
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -100px 0px"
+    };
+    
+    const animateOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add animation classes when element is visible
+          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
+          
+          // Stop observing after animation is applied
+          animateOnScroll.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe sections
+    if (firstSectionRef.current) {
+      animateOnScroll.observe(firstSectionRef.current);
+    }
+    
+    // For services grid items
+    if (servicesSectionRef.current) {
+      const serviceItems = servicesSectionRef.current.querySelectorAll('.service-item');
+      serviceItems.forEach((item, index) => {
+        // Add staggered delay based on index
+        item.classList.add('opacity-0', 'translate-y-4');
+        setTimeout(() => {
+          animateOnScroll.observe(item);
+        }, 100); // Small delay between starting to observe each item
+      });
+    }
+    
+    // For portfolio items
+    if (portfolioSectionRef.current) {
+      const portfolioItems = portfolioSectionRef.current.querySelectorAll('.portfolio-item');
+      portfolioItems.forEach((item, index) => {
+        item.classList.add('opacity-0');
+        setTimeout(() => {
+          animateOnScroll.observe(item);
+        }, 150 * index); // Staggered delay
+      });
+    }
+    
+    return () => {
+      animateOnScroll.disconnect();
+    };
+  }, [isHomePage]);
+
+  const scrollToNextSection = () => {
+    if (servicesSectionRef.current) {
+      servicesSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const servicesList = [
     { name: 'Estrategia de negocio', icon: <TrendingUp size={40} /> },
     { name: 'Branding y posicionamiento', icon: <Lightbulb size={40} /> },
@@ -70,66 +133,81 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
     <>
       {/* First section with the blue pattern background - Only show on Services page */}
       {!isHomePage && (
-        <section 
-          className="py-20"
-          style={{
-            backgroundImage: "url('/lovable-uploads/657c7256-5a30-4dba-9fa4-1f163d3f5012.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="container mx-auto max-w-6xl px-4 md:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="md:w-1/2 lg:w-3/5 mb-8 md:mb-0">
-                <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 text-white">
-                  Somos tu primer llamado.
-                  <br />
-                  Y también el único que vas a necesitar
-                </h2>
-                <div className="space-y-2">
-                  <p className="text-xs md:text-sm text-white">
-                    Sabemos que hacer crecer un negocio en el entorno digital puede 
-                    parecer complejo. Por eso, en nuestra agencia no solo te acompañamos: 
-                    te resolvemos todo.
-                  </p>
-                  <p className="text-xs md:text-sm text-white">
-                    No importa si necesitás posicionar tu marca, vender más, optimizar 
-                    procesos o simplemente dejar de sentir que estás solo. Somos ese 
-                    equipo de especialistas que trabaja detrás de escena para que todo 
-                    funcione.
-                  </p>
-                  <p className="text-xs md:text-sm text-white">
-                    Nuestra propuesta es integral. Te brindamos una solución a medida, 
-                    diseñada con estrategia, creatividad y foco en resultados.
-                  </p>
+        <>
+          <section 
+            ref={firstSectionRef}
+            className="py-20 opacity-0 transition-all duration-700"
+            style={{
+              backgroundImage: "url('/lovable-uploads/657c7256-5a30-4dba-9fa4-1f163d3f5012.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="container mx-auto max-w-6xl px-4 md:px-8">
+              <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="md:w-1/2 lg:w-3/5 mb-8 md:mb-0">
+                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 text-white">
+                    Somos tu primer llamado.
+                    <br />
+                    Y también el único que vas a necesitar
+                  </h2>
+                  <div className="space-y-2">
+                    <p className="text-xs md:text-sm text-white">
+                      Sabemos que hacer crecer un negocio en el entorno digital puede 
+                      parecer complejo. Por eso, en nuestra agencia no solo te acompañamos: 
+                      te resolvemos todo.
+                    </p>
+                    <p className="text-xs md:text-sm text-white">
+                      No importa si necesitás posicionar tu marca, vender más, optimizar 
+                      procesos o simplemente dejar de sentir que estás solo. Somos ese 
+                      equipo de especialistas que trabaja detrás de escena para que todo 
+                      funcione.
+                    </p>
+                    <p className="text-xs md:text-sm text-white">
+                      Nuestra propuesta es integral. Te brindamos una solución a medida, 
+                      diseñada con estrategia, creatividad y foco en resultados.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="md:w-1/2 lg:w-2/5 flex justify-end">
-                <div className="w-full h-auto flex items-center justify-end">
-                  <img 
-                    src="/lovable-uploads/b13da488-e6bb-4760-849b-94fdc9247d53.png" 
-                    alt="Teléfono" 
-                    className="w-full md:w-[500px] h-auto"
-                  />
+                <div className="md:w-1/2 lg:w-2/5 flex justify-end">
+                  <div className="w-full h-auto flex items-center justify-end">
+                    <img 
+                      src="/lovable-uploads/b13da488-e6bb-4760-849b-94fdc9247d53.png" 
+                      alt="Teléfono" 
+                      className="w-full md:w-[500px] h-auto"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+            <div className="flex justify-center mt-8 animate-bounce">
+              <button 
+                onClick={scrollToNextSection}
+                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300"
+                aria-label="Scroll to next section"
+              >
+                <ChevronDown size={24} className="text-white" />
+              </button>
+            </div>
+          </section>
+        </>
       )}
 
       {/* Second section with the gray background for services icons - Only show on Services page */}
       {!isHomePage && (
-        <section className="py-20 px-4 bg-gray-100">
+        <section ref={servicesSectionRef} className="py-20 px-4 bg-gray-100">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 opacity-0 animate-fade-in">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">¿Qué podemos hacer por tu marca?</h3>
               <p className="text-xl font-semibold text-habla-blue">Todo esto. Y más.</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {servicesList.map((service, index) => (
-                <div key={index} className="flex flex-col items-center text-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div 
+                  key={index} 
+                  className="service-item flex flex-col items-center text-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
                   <div className="mb-3 text-habla-blue">{service.icon}</div>
                   <span className="text-sm font-medium">{service.name}</span>
                 </div>
@@ -141,16 +219,19 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
 
       {/* Portfolio section - Only show on Services page */}
       {!isHomePage && (
-        <section className="py-20 px-4 bg-white">
+        <section ref={portfolioSectionRef} className="py-20 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 opacity-0 animate-fade-in">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">Nuestros trabajos</h3>
               <p className="text-xl font-semibold text-habla-blue">Casos de éxito que hablan por nosotros</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {portfolioItems.map((item, index) => (
-                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div 
+                  key={index} 
+                  className="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 group"
+                >
                   <div className="relative h-64 overflow-hidden">
                     <img 
                       src={item.image} 

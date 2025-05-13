@@ -4,7 +4,6 @@ import { Instagram, Linkedin, Youtube, Music, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
 
 const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -13,18 +12,29 @@ const ContactPage = () => {
     console.log('Form submitted');
   };
 
-  const backgroundStyle = {
-    backgroundImage: 'linear-gradient(135deg, #1C77C3 0%, #3489D2 100%)',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    position: 'relative' as const,
-  };
-
   return (
-    <section className="py-16 px-4 min-h-[calc(100vh-180px)]" style={backgroundStyle}>
+    <section 
+      className="py-16 px-4 min-h-[calc(100vh-180px)]" 
+      style={{ 
+        backgroundImage: 'url("/lovable-uploads/9e6e051a-3394-465d-9ff7-c0ec983cedc2.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        position: 'relative'
+      }}
+    >
       <div className="container mx-auto">
-        <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="grid md:grid-cols-2">
+        <div className="max-w-6xl mx-auto flex items-center justify-center">
+          
+          {/* Left Worker Character */}
+          <div className="hidden md:block relative">
+            <img 
+              src="/lovable-uploads/41ea5138-c7d1-4f92-9432-7b1f58a00805.png" 
+              alt="Personaje con casco" 
+              className="h-60 absolute -left-20 top-1/2 transform -translate-y-1/2" 
+            />
+          </div>
+          
+          <div className="grid md:grid-cols-2 bg-white rounded-lg shadow-xl overflow-hidden w-full">
             {/* Left side - Title and social links */}
             <div className="bg-habla-blue p-8 lg:p-12 text-white flex flex-col justify-between">
               <div>
@@ -139,22 +149,16 @@ const ContactPage = () => {
                   ENVIAR <Send size={16} />
                 </Button>
               </form>
-              
-              <div className="mt-8 flex justify-center">
-                <div className="flex gap-6 items-center">
-                  <img 
-                    src="/lovable-uploads/41ea5138-c7d1-4f92-9432-7b1f58a00805.png" 
-                    alt="Personaje con casco" 
-                    className="h-24" 
-                  />
-                  <img 
-                    src="/lovable-uploads/36292e76-9c63-4346-a49f-1379716b1403.png" 
-                    alt="Personaje con casco" 
-                    className="h-24" 
-                  />
-                </div>
-              </div>
             </div>
+          </div>
+          
+          {/* Right Worker Character */}
+          <div className="hidden md:block relative">
+            <img 
+              src="/lovable-uploads/36292e76-9c63-4346-a49f-1379716b1403.png" 
+              alt="Personaje con casco" 
+              className="h-60 absolute -right-20 top-1/2 transform -translate-y-1/2" 
+            />
           </div>
         </div>
       </div>

@@ -29,40 +29,40 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
 
   const portfolioItems = [
     {
-      title: "Kubica",
-      description: "Estrategia digital para inmobiliaria de lujo",
-      category: "Estrategia Digital",
-      image: "/lovable-uploads/461389c2-f824-4df8-be93-f462910f226a.png"
+      title: "Multitek",
+      description: "Diseño web para empresa de soluciones B2B",
+      category: "Diseño Web",
+      image: "/lovable-uploads/fba5eb33-f856-448a-a7d4-d6ab47db66f0.png"
     },
     {
-      title: "Mamba",
-      description: "Modernización de marca y crecimiento digital",
-      category: "Branding y Marketing",
-      image: "/lovable-uploads/5a12bd78-b4c3-4827-a7d4-29c6c95928c1.png"
+      title: "Easy Rent",
+      description: "Plataforma de gestión inmobiliaria",
+      category: "Diseño Web y UX/UI",
+      image: "/lovable-uploads/da74bcb5-214a-455e-a838-5586bb8f0c56.png"
     },
     {
-      title: "Bodega Miras",
-      description: "Estrategia de comunicación y marketing",
-      category: "Comunicación",
-      image: "/lovable-uploads/5bb97689-6cfd-474b-97f0-2ce9cdc76f63.png"
+      title: "Panamá 'Onde Uno",
+      description: "Portal de turismo y experiencias locales",
+      category: "Diseño Web",
+      image: "/lovable-uploads/299d6d2a-ad27-4264-91fc-876798e1b592.png"
     },
     {
-      title: "Coleman",
-      description: "Campañas de marketing estacionales",
-      category: "Campañas Digitales",
-      image: "/lovable-uploads/6c742358-60c2-47e6-88c4-ce2cda7b8df4.png"
+      title: "Paradise Point",
+      description: "Web para complejo turístico de lujo",
+      category: "Diseño Web",
+      image: "/lovable-uploads/02e0c444-f528-48f6-93c2-48d4fbb2fc1d.png"
     },
     {
-      title: "Pernod Ricard",
-      description: "Estrategia integral de comunicación",
-      category: "Comunicación y Marketing",
-      image: "/lovable-uploads/9ea472df-92a5-4420-8fb8-f416ccbbf785.png"
+      title: "Parque del Buen Retiro",
+      description: "Estrategia digital y redes sociales",
+      category: "Redes Sociales",
+      image: "/lovable-uploads/5d79a657-afdb-4a84-9b88-432cf7bf7551.png"
     },
     {
-      title: "Aperol",
-      description: "Campañas y eventos digitales",
-      category: "Marketing Digital",
-      image: "/lovable-uploads/fc5c94ad-1ddd-4fc4-86ce-ea07935f27c4.png"
+      title: "La Oficina de mi Abuelo",
+      description: "Web y gestión de redes para hospedaje",
+      category: "Diseño Web y RRSS",
+      image: "/lovable-uploads/19a68100-0c89-4ba2-8486-d7b6ee5cdeca.png"
     }
   ];
 

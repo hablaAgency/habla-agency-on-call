@@ -159,8 +159,8 @@ const Podcast = () => {
           </div>
         </div>
 
-        {/* Episodes carousel */}
-        <div className="mb-20">
+        {/* Episodes carousel - increased height */}
+        <div className="mb-20 min-h-[80vh] flex flex-col justify-center">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold">Episodios</h2>
           </div>
@@ -171,6 +171,7 @@ const Podcast = () => {
               loop: true,
             }}
             className="w-full"
+            autoplay={true}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {episodes.map((episode) => (
@@ -242,6 +243,32 @@ const Podcast = () => {
               ))}
             </TableBody>
           </Table>
+        </div>
+
+        {/* CTA Section - New addition */}
+        <div className="py-20 bg-gradient-to-r from-habla-red/90 to-habla-red rounded-lg shadow-xl mt-20 text-center text-white">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2 className="text-4xl font-bold mb-6">¡Sigue nuestro podcast!</h2>
+            <p className="text-xl mb-10">
+              No te pierdas ningún episodio de "Un café con habla.agency". Suscríbete a nuestro canal y síguenos en tus plataformas favoritas para recibir notificaciones sobre nuevos lanzamientos.
+            </p>
+            <div className="flex flex-col md:flex-row justify-center gap-6">
+              <Button 
+                className="bg-white text-habla-red hover:bg-gray-100 flex items-center gap-3 text-lg px-8 py-6"
+                onClick={() => window.open('https://www.youtube.com/@habla.agency', '_blank')}
+              >
+                <Youtube size={24} className="text-habla-red" />
+                <span>Suscribirse en YouTube</span>
+              </Button>
+              <Button 
+                className="bg-white text-green-600 hover:bg-gray-100 flex items-center gap-3 text-lg px-8 py-6"
+                onClick={() => window.open('https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS', '_blank')}
+              >
+                <Music size={24} className="text-green-600" />
+                <span>Seguir en Spotify</span>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

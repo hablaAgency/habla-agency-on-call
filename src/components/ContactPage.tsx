@@ -27,8 +27,8 @@ const ContactPage = () => {
           
           {/* Left side - Title and text */}
           <div className="text-white self-start">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 max-w-md leading-tight">
-              Es momento de alcanzar tus objetivos
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 max-w-md leading-tight whitespace-pre-line">
+              {"Es momento de\nalcanzar tus objetivos"}
             </h1>
             
             <p className="text-lg mb-8">

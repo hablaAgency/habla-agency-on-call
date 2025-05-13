@@ -2,18 +2,18 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import Contact from '../components/Contact';
+import ContactPage from '../components/ContactPage';
 
-const ContactPage = () => {
+const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       <NavBar />
       <div className="pt-24">
-        <Contact />
+        <ContactPage />
       </div>
       <Footer />
     </div>
   );
 };
 
-export default ContactPage;
+export default Contact;

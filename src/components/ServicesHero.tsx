@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
 
 const ServicesHero = () => {
   const words = ["Performance", "Branding", "Fun", "Results", "Growth"];
@@ -43,14 +42,6 @@ const ServicesHero = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, wordIndex]);
 
-  const scrollToContent = () => {
-    // Smooth scroll to the first section below hero
-    const nextSection = document.querySelector('.py-20');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="h-screen bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 h-full">
@@ -64,23 +55,17 @@ const ServicesHero = () => {
               <span className="block -mt-4 text-[#ea384c] text-[80px]">on demand</span>
             </h1>
           </div>
-          <div className="md:w-1/2 flex justify-center z-10 mt-8 md:mt-0 animate-fade-in">
+          <div className="md:w-1/2 flex justify-center z-10 mt-8 md:mt-0">
             <img 
               src="/lovable-uploads/fc5c94ad-1ddd-4fc4-86ce-ea07935f27c4.png" 
               alt="Construction workers building letter A" 
-              className="w-full animate-float"
+              className="w-full animate-slide-in-right" 
             />
           </div>
         </div>
       </div>
       {/* Decorative vertical line */}
       <div className="absolute h-full w-0.5 bg-black/30 left-1/4 transform -translate-x-1/2 z-0"></div>
-      
-      {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center cursor-pointer" onClick={scrollToContent}>
-        <span className="text-sm mb-2 text-gray-600 font-medium">Scroll Down</span>
-        <ChevronDown className="text-habla-blue" size={24} />
-      </div>
     </section>
   );
 };

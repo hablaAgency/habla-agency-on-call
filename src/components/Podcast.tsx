@@ -65,13 +65,16 @@ const episodes = [
     image: "/lovable-uploads/15cbd167-3c81-49ed-82a3-a14a5d87fc6b.png",
   },
   {
-    id: 6,
-    number: "#6",
+    id: 10,
+    number: "#10",
     title: "¿Cómo convertir tu pasión en una marca exitosa?",
     guest: "Dai Altamura",
     image: "/lovable-uploads/a510c097-ccc8-4234-b9e4-472f86b31c0e.png",
   }
 ];
+
+// Get the latest episode (Ezequiel Adatto's episode)
+const latestEpisode = episodes.find(ep => ep.guest === "Ezequiel Adatto") || episodes[7];
 
 const Podcast = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -135,23 +138,24 @@ const Podcast = () => {
           </div>
         </div>
 
-        {/* About section */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold mb-6">Sobre el podcast</h2>
-          <p className="text-lg">
-            "Un café con habla.agency" es un espacio donde conversamos con referentes de diferentes industrias para conocer sus historias, compartir aprendizajes y descubrir las claves de su éxito. Cada episodio es una oportunidad para inspirarse y obtener conocimientos valiosos que pueden transformar la forma en que abordamos nuestros propios proyectos.
-          </p>
-          
-          <div className="mt-10">
+        {/* About section with mobile phone image on the left */}
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
+          <div className="md:w-1/3">
             <img 
               src="/lovable-uploads/0968423a-acf9-4fc8-857f-4784d1f76e9f.png" 
               alt="Un café con habla.agency mobile app" 
-              className="w-48 mx-auto"
+              className="w-48 max-w-full mx-auto"
             />
+          </div>
+          <div className="md:w-2/3">
+            <h2 className="text-3xl font-bold mb-6">Sobre el podcast</h2>
+            <p className="text-lg">
+              "Un café con habla.agency" es un espacio donde conversamos con referentes de diferentes industrias para conocer sus historias, compartir aprendizajes y descubrir las claves de su éxito. Cada episodio es una oportunidad para inspirarse y obtener conocimientos valiosos que pueden transformar la forma en que abordamos nuestros propios proyectos.
+            </p>
           </div>
         </div>
 
-        {/* Latest featured episode */}
+        {/* Latest featured episode - Ezequiel Adatto */}
         <div className="mb-16 bg-white rounded-lg shadow-xl overflow-hidden">
           <div className="grid md:grid-cols-2">
             <div className="relative h-80 md:h-auto bg-habla-blue">
@@ -161,22 +165,25 @@ const Podcast = () => {
                 </div>
               </div>
               <img 
-                src="/lovable-uploads/04ce224b-e9db-45f5-a79a-934241c4ce1f.png"
-                alt="Featured episode" 
+                src={latestEpisode.image}
+                alt={`Episodio ${latestEpisode.number} con ${latestEpisode.guest}`} 
                 className="w-full h-full object-cover opacity-80"
               />
             </div>
             <div className="p-8 md:p-10 flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-habla-red uppercase mb-2">Episodio destacado</span>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Un café con habla.agency</h3>
+              <span className="text-xs font-semibold tracking-wider text-habla-red uppercase mb-2">Último episodio</span>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">{latestEpisode.title}</h3>
+              <p className="text-gray-600 mb-2">
+                Con {latestEpisode.guest}
+              </p>
               <p className="text-gray-600 mb-6">
-                Descubre conversaciones inspiradoras con emprendedores y profesionales que están redefiniendo sus industrias. Aprendizajes, desafíos y experiencias que te ayudarán a potenciar tu propio camino.
+                En este episodio exploramos el arte de la animación y el emprendimiento, descubriendo la historia detrás de Búho y los desafíos de convertir una pasión creativa en un negocio exitoso.
               </p>
               <Button 
                 className="self-start flex items-center gap-2 bg-habla-red hover:bg-red-700"
                 onClick={() => window.open('https://www.youtube.com/@habla.agency', '_blank')}
               >
-                Ver el último episodio
+                Ver este episodio
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

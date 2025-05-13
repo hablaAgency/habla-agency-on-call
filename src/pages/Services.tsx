@@ -11,7 +11,7 @@ const ServicesPage = () => {
       <NavBar />
       <div className="pt-16">
         <ServicesHero />
-        <Services />
+        <Services isHomePage={false} />
       </div>
       <Footer />
     </div>

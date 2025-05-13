@@ -23,7 +23,7 @@ const Hero = () => {
               <div className={isMobile ? "" : "whitespace-nowrap"}>Tu marketing dream team</div>
               <div className="flex items-center justify-center mt-4 gap-2">
                 <span className="text-habla-red">a una</span>
-                <span className="on-call-badge text-base md:text-lg px-4 py-2 animate-pulse-slow flex items-center gap-2">
+                <span className="flex items-center gap-2 bg-habla-blue text-white rounded-md px-4 py-2">
                   <Phone className="h-4 w-4" />
                   llamada
                 </span>

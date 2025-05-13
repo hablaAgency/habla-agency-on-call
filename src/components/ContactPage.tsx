@@ -23,142 +23,125 @@ const ContactPage = () => {
       }}
     >
       <div className="container mx-auto">
-        <div className="max-w-6xl mx-auto flex items-center justify-center">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
           
-          {/* Left Worker Character */}
-          <div className="hidden md:block relative">
-            <img 
-              src="/lovable-uploads/41ea5138-c7d1-4f92-9432-7b1f58a00805.png" 
-              alt="Personaje con casco" 
-              className="h-60 absolute -left-20 top-1/2 transform -translate-y-1/2" 
-            />
-          </div>
-          
-          <div className="grid md:grid-cols-2 bg-white rounded-lg shadow-xl overflow-hidden w-full">
-            {/* Left side - Title and social links */}
-            <div className="bg-habla-blue p-8 lg:p-12 text-white flex flex-col justify-between">
-              <div>
-                <h1 className="text-3xl lg:text-4xl font-bold mb-8">¿Listo para empezar tu proyecto?</h1>
+          {/* Left side - Title and text */}
+          <div className="text-white max-w-md">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              Es momento de alcanzar tus objetivos
+            </h1>
+            
+            <p className="text-lg mb-8">
+              Queremos construir nuestro próximo caso de éxito, queremos construir nuestro próximo caso de éxito.
+            </p>
+
+            <div className="mt-10">
+              <h3 className="text-xl font-semibold mb-6">Encuéntranos en</h3>
+              
+              <div className="space-y-6">
+                <a 
+                  href="#" 
+                  className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
+                >
+                  <div className="bg-white/20 p-2 rounded-full">
+                    <Instagram className="h-6 w-6" />
+                  </div>
+                  <span>@habla.agency</span>
+                </a>
                 
-                <p className="text-lg mb-8">
-                  Contáctanos hoy mismo y comencemos a trabajar juntos para hacer realidad tu visión.
-                </p>
+                <a 
+                  href="#" 
+                  className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
+                >
+                  <div className="bg-white/20 p-2 rounded-full">
+                    <Linkedin className="h-6 w-6" />
+                  </div>
+                  <span>/habla-agency</span>
+                </a>
+                
+                <a 
+                  href="https://www.youtube.com/@habla.agency" 
+                  className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="bg-white/20 p-2 rounded-full">
+                    <Youtube className="h-6 w-6" />
+                  </div>
+                  <span>Habla Agency</span>
+                </a>
+                
+                <a 
+                  href="https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
+                  className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="bg-white/20 p-2 rounded-full">
+                    <Music className="h-6 w-6" />
+                  </div>
+                  <span>Un café con habla.agency</span>
+                </a>
               </div>
               
-              <div className="mt-12">
-                <h3 className="text-xl font-semibold mb-6">Encuéntranos en</h3>
-                
-                <div className="space-y-6">
-                  <a 
-                    href="#" 
-                    className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
-                  >
-                    <div className="bg-white/20 p-2 rounded-full">
-                      <Instagram className="h-6 w-6" />
-                    </div>
-                    <span>@habla.agency</span>
-                  </a>
-                  
-                  <a 
-                    href="#" 
-                    className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
-                  >
-                    <div className="bg-white/20 p-2 rounded-full">
-                      <Linkedin className="h-6 w-6" />
-                    </div>
-                    <span>/habla-agency</span>
-                  </a>
-                  
-                  <a 
-                    href="https://www.youtube.com/@habla.agency" 
-                    className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="bg-white/20 p-2 rounded-full">
-                      <Youtube className="h-6 w-6" />
-                    </div>
-                    <span>Habla Agency</span>
-                  </a>
-                  
-                  <a 
-                    href="https://open.spotify.com/show/2A0olalXjxwrff3F8cKsYz"
-                    className="flex items-center gap-3 text-white hover:text-opacity-80 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="bg-white/20 p-2 rounded-full">
-                      <Music className="h-6 w-6" />
-                    </div>
-                    <span>Un café con habla.agency</span>
-                  </a>
-                </div>
-                
-                <div className="mt-10">
-                  <p className="text-lg">¿Prefieres escribirnos directamente?</p>
-                  <a href="mailto:info@habla.agency" className="text-white hover:underline font-semibold">
-                    info@habla.agency
-                  </a>
-                </div>
+              <div className="mt-10">
+                <p className="text-lg">¿Prefieres escribirnos directamente?</p>
+                <a href="mailto:info@habla.agency" className="text-white hover:underline font-semibold">
+                  info@habla.agency
+                </a>
               </div>
+            </div>
+          </div>
+          
+          {/* Right side - Form with characters */}
+          <div className="relative">
+            {/* Left Worker Character */}
+            <div className="hidden md:block absolute -left-16 top-1/2 transform -translate-y-1/2 z-10">
+              <img 
+                src="/lovable-uploads/41ea5138-c7d1-4f92-9432-7b1f58a00805.png" 
+                alt="Personaje con casco" 
+                className="h-48" 
+              />
             </div>
             
-            {/* Right side - Contact form */}
-            <div className="p-8 lg:p-12">
-              <h2 className="text-2xl font-bold mb-8 text-gray-800">Envíanos un mensaje</h2>
+            {/* Form */}
+            <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+              <h2 className="text-2xl font-bold mb-6 text-gray-800">
+                Lorem ipsum
+              </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Nombre
-                  </label>
-                  <Input id="name" placeholder="Tu nombre" required className="w-full" />
-                </div>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <Input placeholder="Lorem Ipsum" className="bg-gray-100" />
                 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <Input id="email" type="email" placeholder="tu@email.com" required className="w-full" />
-                </div>
+                <Input placeholder="Lorem Ipsum" className="bg-gray-100" />
                 
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Teléfono (opcional)
-                  </label>
-                  <Input id="phone" type="tel" placeholder="+54 123 456 7890" className="w-full" />
-                </div>
+                <Input placeholder="Lorem Ipsum" className="bg-gray-100" />
                 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Mensaje
-                  </label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="¿En qué podemos ayudarte?" 
-                    rows={6} 
-                    required 
-                    className="w-full resize-none"
-                  />
-                </div>
+                <Textarea 
+                  placeholder="Lorem Ipsum" 
+                  rows={4} 
+                  className="bg-gray-100 resize-none"
+                />
                 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-habla-red hover:bg-red-600 text-white flex items-center justify-center gap-2"
-                >
-                  ENVIAR <Send size={16} />
-                </Button>
+                <div className="pt-2">
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-red-600 hover:bg-red-700 text-white"
+                  >
+                    Enviar
+                  </Button>
+                </div>
               </form>
             </div>
-          </div>
-          
-          {/* Right Worker Character */}
-          <div className="hidden md:block relative">
-            <img 
-              src="/lovable-uploads/36292e76-9c63-4346-a49f-1379716b1403.png" 
-              alt="Personaje con casco" 
-              className="h-60 absolute -right-20 top-1/2 transform -translate-y-1/2" 
-            />
+            
+            {/* Right Worker Character */}
+            <div className="hidden md:block absolute -right-16 top-1/2 transform -translate-y-1/2 z-10">
+              <img 
+                src="/lovable-uploads/36292e76-9c63-4346-a49f-1379716b1403.png" 
+                alt="Personaje con casco" 
+                className="h-48" 
+              />
+            </div>
           </div>
         </div>
       </div>

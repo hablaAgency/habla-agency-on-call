@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
@@ -81,7 +80,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
           <div className="container mx-auto max-w-6xl px-4 md:px-8">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="md:w-2/5 mb-8 md:mb-0">
-                <h2 className="text-xl md:text-2xl font-bold mb-4 text-white">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">
                   Somos tu primer llamado.
                   <br />
                   Y también el único que vas a necesitar
@@ -105,11 +104,11 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
                 </div>
               </div>
               <div className="md:w-3/5 flex justify-center">
-                <div className="w-full md:w-96 h-auto flex items-center justify-center">
+                <div className="w-full md:w-auto h-auto flex items-center justify-center">
                   <img 
                     src="/lovable-uploads/b13da488-e6bb-4760-849b-94fdc9247d53.png" 
                     alt="Teléfono" 
-                    className="w-full h-auto"
+                    className="w-full md:w-[500px] h-auto"
                   />
                 </div>
               </div>

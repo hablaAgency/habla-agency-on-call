@@ -7,6 +7,7 @@ const ServicesHero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Handle typing effect
   useEffect(() => {
@@ -42,6 +43,12 @@ const ServicesHero = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, wordIndex]);
 
+  // Animation entrance effect
+  useEffect(() => {
+    // Set visible after component mounts to trigger the animation
+    setIsVisible(true);
+  }, []);
+
   return (
     <section className="h-screen bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 h-full">
@@ -55,11 +62,11 @@ const ServicesHero = () => {
               <span className="block -mt-4 text-[#ea384c] text-[80px]">on demand</span>
             </h1>
           </div>
-          <div className="md:w-1/2 flex justify-center z-10 mt-8 md:mt-0">
+          <div className={`md:w-1/2 flex justify-center z-10 mt-8 md:mt-0 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
             <img 
               src="/lovable-uploads/fc5c94ad-1ddd-4fc4-86ce-ea07935f27c4.png" 
               alt="Construction workers building letter A" 
-              className="w-full animate-slide-in-right" 
+              className="w-full"
             />
           </div>
         </div>

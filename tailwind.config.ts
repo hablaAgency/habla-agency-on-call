@@ -125,6 +125,10 @@ export default {
 				'carousel': {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(-50%)' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -133,7 +137,8 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'pulse-slow': 'pulse-slow 3s infinite',
 				'float': 'float 6s ease-in-out infinite',
-				'carousel': 'carousel 15s linear infinite'
+				'carousel': 'carousel 15s linear infinite',
+				'slide-in-right': 'slide-in-right 0.5s ease-out forwards'
 			}
 		}
 	},

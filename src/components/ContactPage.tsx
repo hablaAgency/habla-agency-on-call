@@ -30,10 +30,6 @@ const ContactPage = () => {
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight max-w-xs md:max-w-sm">
               Es momento de<br />alcanzar tus objetivos
             </h1>
-            
-            <p className="text-lg mb-8">
-              Queremos construir nuestro próximo caso de éxito!
-            </p>
 
             <div className="mt-10">
               <h3 className="text-xl font-semibold mb-6">Encontranos en</h3>

@@ -27,26 +27,45 @@ const Services = () => {
     <>
       {/* First section with the blue pattern background */}
       <section 
-        className="py-20 px-4"
+        className="py-20"
         style={{
-          backgroundImage: "url('/lovable-uploads/5a12bd78-b4c3-4827-a7d4-29c6c95928c1.png')",
+          backgroundImage: "url('/lovable-uploads/5bb97689-6cfd-474b-97f0-2ce9cdc76f63.png')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
       >
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Somos tu primer llamado. Y también el único que vas a necesitar.</h2>
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg mb-4 text-white">
-                Sabemos que hacer crecer un negocio en el entorno digital puede parecer complejo. Por eso, en nuestra agencia no solo te acompañamos: te resolvemos todo.
-              </p>
-              <p className="text-lg mb-4 text-white">
-                No importa si necesitás posicionar tu marca, vender más, optimizar procesos o simplemente dejar de sentir que estás solo. Somos ese equipo de especialistas que trabaja detrás de escena para que todo funcione.
-              </p>
-              <p className="text-lg mb-4 text-white">
-                Nuestra propuesta es integral. Te brindamos una solución a medida, diseñada con estrategia, creatividad y foco en resultados.
-              </p>
+        <div className="container mx-auto max-w-6xl px-4 md:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-3/5 mb-8 md:mb-0">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+                Somos tu primer llamado.
+                <br />
+                Y también el único que vas a necesitar
+              </h2>
+              <div className="space-y-4">
+                <p className="text-lg text-white">
+                  Sabemos que hacer crecer un negocio en el entorno digital puede 
+                  parecer complejo. Por eso, en nuestra agencia no solo te acompañamos: 
+                  te resolvemos todo.
+                </p>
+                <p className="text-lg text-white">
+                  No importa si necesitás posicionar tu marca, vender más, optimizar 
+                  procesos o simplemente dejar de sentir que estás solo. Somos ese 
+                  equipo de especialistas que trabaja detrás de escena para que todo 
+                  funcione.
+                </p>
+                <p className="text-lg text-white">
+                  Nuestra propuesta es integral. Te brindamos una solución a medida, 
+                  diseñada con estrategia, creatividad y foco en resultados.
+                </p>
+              </div>
+            </div>
+            <div className="md:w-2/5 flex justify-center">
+              <img 
+                src="/lovable-uploads/5bb97689-6cfd-474b-97f0-2ce9cdc76f63.png" 
+                alt="Teléfono" 
+                className="w-1/2 md:w-64 h-auto object-contain invisible" 
+              />
             </div>
           </div>
         </div>

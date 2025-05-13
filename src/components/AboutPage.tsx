@@ -44,7 +44,7 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <section className="py-20 px-4 bg-white text-habla-darkGray">
+    <section className="py-20 px-4 bg-gray-100 text-habla-darkGray">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 flex flex-col md:flex-row items-center gap-8">
@@ -74,7 +74,7 @@ const AboutPage = () => {
           </div>
           
           <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
+            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500 hover:shadow-lg">
               <CardContent className="p-8">
                 <div className="mb-4 text-[#2276c3]">
                   <MessageSquare size={40} />
@@ -89,7 +89,7 @@ const AboutPage = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
+            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500 hover:shadow-lg">
               <CardContent className="p-8">
                 <div className="mb-4 text-[#2276c3]">
                   <ShieldCheck size={40} />
@@ -103,7 +103,7 @@ const AboutPage = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
+            <Card className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500 hover:shadow-lg">
               <CardContent className="p-8">
                 <div className="mb-4 text-[#2276c3]">
                   <Star size={40} />
@@ -122,7 +122,7 @@ const AboutPage = () => {
 
           {/* Nueva sección: Retorno de inversión y resultados sostenibles */}
           <div ref={investmentSectionRef} className="mb-16">
-            <div className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500">
+            <div className="card-animate opacity-0 bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden transform transition-all duration-500 hover:shadow-lg">
               <div className="p-8">
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="text-[#2276c3] mb-4">

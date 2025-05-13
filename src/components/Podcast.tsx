@@ -5,6 +5,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 
 // Episode data
 const episodes = [
@@ -73,9 +80,6 @@ const episodes = [
   }
 ];
 
-// Get the latest episode (Ezequiel Adatto's episode)
-const latestEpisode = episodes.find(ep => ep.guest === "Ezequiel Adatto") || episodes[7];
-
 const Podcast = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const episodesPerPage = 6;
@@ -90,10 +94,10 @@ const Podcast = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Hero section - 100vh height */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-20 min-h-[100vh] pt-16">
+        {/* Hero section - reduced height */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-20 min-h-[80vh] pt-10">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Un café con <span className="text-habla-red">habla.agency</span>
@@ -155,110 +159,57 @@ const Podcast = () => {
           </div>
         </div>
 
-        {/* Latest featured episode - Ezequiel Adatto */}
-        <div className="mb-16 bg-white rounded-lg shadow-xl overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="relative h-80 md:h-auto bg-habla-blue">
-              <div className="absolute inset-0 bg-gradient-to-r from-habla-blue/90 to-habla-blue/60">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Play className="h-20 w-20 text-white hover:scale-110 transition-transform cursor-pointer" />
-                </div>
-              </div>
-              <img 
-                src={latestEpisode.image}
-                alt={`Episodio ${latestEpisode.number} con ${latestEpisode.guest}`} 
-                className="w-full h-full object-cover opacity-80"
-              />
-            </div>
-            <div className="p-8 md:p-10 flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-habla-red uppercase mb-2">Último episodio</span>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">{latestEpisode.title}</h3>
-              <p className="text-gray-600 mb-2">
-                Con {latestEpisode.guest}
-              </p>
-              <p className="text-gray-600 mb-6">
-                En este episodio exploramos el arte de la animación y el emprendimiento, descubriendo la historia detrás de Búho y los desafíos de convertir una pasión creativa en un negocio exitoso.
-              </p>
-              <Button 
-                className="self-start flex items-center gap-2 bg-habla-red hover:bg-red-700"
-                onClick={() => window.open('https://www.youtube.com/@habla.agency', '_blank')}
-              >
-                Ver este episodio
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Episodes grid */}
-        <div className="mb-10">
+        {/* Episodes carousel */}
+        <div className="mb-20">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold">Episodios</h2>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {currentEpisodes.map((episode) => (
-              <Card key={`${episode.number}-${episode.guest}`} className="overflow-hidden transition-all duration-300 hover:shadow-2xl">
-                <div className="relative h-48 overflow-hidden bg-gray-200">
-                  <img 
-                    src={episode.image} 
-                    alt={`Episodio ${episode.number} con ${episode.guest}`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
-                    <span className="text-xl font-bold text-white">{episode.number}</span>
-                    <h4 className="text-white font-medium">{episode.guest}</h4>
-                  </div>
-                  <div className="absolute top-0 right-0 bg-habla-red text-white text-xs font-bold py-1 px-3">
-                    NUEVO
-                  </div>
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-bold line-clamp-2 mb-2">{episode.title}</h3>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="w-full mt-2 border-habla-red text-habla-red hover:bg-habla-red hover:text-white"
-                  >
-                    <Play className="h-4 w-4 mr-2" /> Escuchar ahora
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <Pagination className="mt-8">
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious 
-                  onClick={() => paginate(Math.max(1, currentPage - 1))}
-                  className={currentPage === 1 ? 'pointer-events-none opacity-50' : ''}
-                />
-              </PaginationItem>
-              
-              {Array.from({ length: totalPages }).map((_, index) => (
-                <PaginationItem key={index}>
-                  <PaginationLink 
-                    onClick={() => paginate(index + 1)}
-                    isActive={currentPage === index + 1}
-                  >
-                    {index + 1}
-                  </PaginationLink>
-                </PaginationItem>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {episodes.map((episode) => (
+                <CarouselItem key={`carousel-${episode.number}-${episode.guest}`} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <Card className="overflow-hidden transition-all duration-300 hover:shadow-2xl h-full">
+                    <div className="relative h-48 overflow-hidden bg-gray-200">
+                      <img 
+                        src={episode.image} 
+                        alt={`Episodio ${episode.number} con ${episode.guest}`}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                        <span className="text-xl font-bold text-white">{episode.number}</span>
+                        <h4 className="text-white font-medium">{episode.guest}</h4>
+                      </div>
+                      <div className="absolute top-0 right-0 bg-habla-red text-white text-xs font-bold py-1 px-3">
+                        NUEVO
+                      </div>
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-bold line-clamp-2 mb-2">{episode.title}</h3>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full mt-2 border-habla-red text-habla-red hover:bg-habla-red hover:text-white"
+                      >
+                        <Play className="h-4 w-4 mr-2" /> Escuchar ahora
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
               ))}
-              
-              <PaginationItem>
-                <PaginationNext 
-                  onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-                  className={currentPage === totalPages ? 'pointer-events-none opacity-50' : ''}
-                />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
-        )}
+            </CarouselContent>
+            <div className="flex justify-center mt-6 gap-4">
+              <CarouselPrevious className="static transform-none mx-2" />
+              <CarouselNext className="static transform-none mx-2" />
+            </div>
+          </Carousel>
+        </div>
 
         {/* Episode list table for desktop */}
         <div className="hidden lg:block mt-16 bg-white rounded-lg shadow-lg overflow-hidden">

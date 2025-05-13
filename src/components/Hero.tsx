@@ -20,8 +20,10 @@ const Hero = () => {
         <div className="container mx-auto">
           <div className="mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              <div className={isMobile ? "" : "whitespace-nowrap"}>Tu marketing dream team</div>
-              <div className="text-habla-blue">a una llamada</div>
+              <div className={isMobile ? "" : "whitespace-nowrap"}>Your marketing dream team</div>
+              <div className="flex items-center justify-center mt-4">
+                <span className="on-call-badge text-base md:text-lg px-4 py-2 animate-pulse-slow">on call</span>
+              </div>
             </h1>
             
             <div className="mt-8 w-full flex justify-center">

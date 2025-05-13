@@ -61,11 +61,12 @@ const Testimonials = () => {
                 {testimonials.map((testimonial) => (
                   <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
                     <Card className="bg-white p-6 md:p-8 rounded-3xl shadow-md flex flex-col items-center">
-                      <div className="mb-4">
-                        <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mb-2">
-                          <span className="text-gray-500 text-xl">LOGO</span>
-                        </div>
-                      </div>
+                      <Avatar className="w-24 h-24 mb-6 bg-habla-blue">
+                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                        <AvatarFallback className="bg-habla-blue text-white text-xl">
+                          {testimonial.name.charAt(0)}
+                        </AvatarFallback>
+                      </Avatar>
                       
                       <blockquote className="mb-6 text-center text-gray-700 max-w-2xl">
                         "{testimonial.text}"
@@ -79,7 +80,6 @@ const Testimonials = () => {
                       
                       <footer className="text-center">
                         <p className="font-semibold text-lg">{testimonial.name}</p>
-                        <p className="text-gray-600">{testimonial.position}, {testimonial.company}</p>
                       </footer>
                     </Card>
                   </div>

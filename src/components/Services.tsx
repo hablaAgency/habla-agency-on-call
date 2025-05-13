@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   TrendingUp, Lightbulb, Instagram, Megaphone, 
   Code, Search, Palette, Film, Handshake, 
-  Newspaper, ArrowsUpFromLine, Smartphone, ChevronDown
+  Newspaper, ArrowsUpFromLine, Smartphone
 } from 'lucide-react';
 
 interface ServicesProps {
@@ -179,15 +179,6 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="flex justify-center mt-8 animate-bounce">
-              <button 
-                onClick={scrollToNextSection}
-                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300"
-                aria-label="Scroll to next section"
-              >
-                <ChevronDown size={24} className="text-white" />
-              </button>
             </div>
           </section>
         </>

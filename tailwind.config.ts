@@ -64,8 +64,8 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				habla: {
-					blue: '#1EAEDB',
-					lightBlue: '#33C3F0',
+					blue: '#1C77C3',
+					lightBlue: '#3489D2',
 					red: '#ea384c',
 					gray: '#f4f7f9',
 					darkGray: '#333333',

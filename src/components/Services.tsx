@@ -202,8 +202,8 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
                 <CardContent>
                   <div className="h-40 mb-6 bg-habla-gray rounded-lg flex items-center justify-center">
                     <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M50,20 C32,20 20,32 20,50 C20,68 32,80 50,80 C68,80 80,68 80,50 C80,32 68,20 50,20 Z M50,75 C35,75 25,65 25,50 C25,35 35,25 50,25 C65,25 75,35 75,50 C75,65 65,75 50,75 Z" fill="#1EAEDB" />
-                      <path d="M50,30 C38,30 30,38 30,50 C30,62 38,70 50,70 C62,70 70,62 70,50 C70,38 62,30 50,30 Z" fill="#33C3F0" fillOpacity="0.5" />
+                      <path d="M50,20 C32,20 20,32 20,50 C20,68 32,80 50,80 C68,80 80,68 80,50 C80,32 68,20 50,20 Z M50,75 C35,75 25,65 25,50 C25,35 35,25 50,25 C65,25 75,35 75,50 C75,65 65,75 50,75 Z" fill="#1C77C3" />
+                      <path d="M50,30 C38,30 30,38 30,50 C30,62 38,70 50,70 C62,70 70,62 70,50 C70,38 62,30 50,30 Z" fill="#3489D2" fillOpacity="0.5" />
                     </svg>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
@@ -219,13 +219,13 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
                 <CardContent>
                   <div className="h-40 mb-6 bg-habla-gray rounded-lg flex items-center justify-center">
                     <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20,80 L80,80" stroke="#1EAEDB" strokeWidth="3" />
-                      <path d="M20,80 L20,40 L35,50 L50,30 L65,45 L80,20" stroke="#1EAEDB" strokeWidth="3" fill="none" />
-                      <circle cx="20" cy="40" r="3" fill="#33C3F0" />
-                      <circle cx="35" cy="50" r="3" fill="#33C3F0" />
-                      <circle cx="50" cy="30" r="3" fill="#33C3F0" />
-                      <circle cx="65" cy="45" r="3" fill="#33C3F0" />
-                      <circle cx="80" cy="20" r="3" fill="#33C3F0" />
+                      <path d="M20,80 L80,80" stroke="#1C77C3" strokeWidth="3" />
+                      <path d="M20,80 L20,40 L35,50 L50,30 L65,45 L80,20" stroke="#1C77C3" strokeWidth="3" fill="none" />
+                      <circle cx="20" cy="40" r="3" fill="#3489D2" />
+                      <circle cx="35" cy="50" r="3" fill="#3489D2" />
+                      <circle cx="50" cy="30" r="3" fill="#3489D2" />
+                      <circle cx="65" cy="45" r="3" fill="#3489D2" />
+                      <circle cx="80" cy="20" r="3" fill="#3489D2" />
                     </svg>
                   </div>
                   <p className="text-gray-700 leading-relaxed">

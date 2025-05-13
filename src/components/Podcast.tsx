@@ -20,6 +20,8 @@ const episodes = [
     title: "El triángulo del PM - Si algo falla, todo falla",
     guest: "Florencia Merino",
     image: "/lovable-uploads/96b88a0e-893c-4331-bbc3-9dfbf5050406.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS" // Generic until specific URL is provided
   },
   {
     id: 2,
@@ -27,6 +29,8 @@ const episodes = [
     title: "El arte está en contar buenas historias",
     guest: "Rafael Acuña Ríos",
     image: "/lovable-uploads/dbce036c-d824-4f5a-8fc4-34b2811f4983.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   },
   {
     id: 3,
@@ -34,6 +38,8 @@ const episodes = [
     title: "¿Qué hace falta para vivir viajando?",
     guest: "Gustavo Eduardo",
     image: "/lovable-uploads/226c62d9-468b-4625-ad87-3299e0d42481.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   },
   {
     id: 4,
@@ -41,6 +47,8 @@ const episodes = [
     title: "¿Qué aprendí en Harvard y Silicon Valley?",
     guest: "Fabián Chernizky",
     image: "/lovable-uploads/ad9c7fdf-f00c-4097-965b-14772a96b9e3.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   },
   {
     id: 5,
@@ -48,6 +56,8 @@ const episodes = [
     title: "El puente entre la ciencia y el dinero",
     guest: "Nicolás Sujovolsky",
     image: "/lovable-uploads/913b93d1-12e1-47ba-9217-fb9e5feb3c31.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   },
   {
     id: 6,
@@ -55,6 +65,8 @@ const episodes = [
     title: "¿Cómo convertir tu pasión en una marca exitosa?",
     guest: "Dai Altamura",
     image: "/lovable-uploads/a510c097-ccc8-4234-b9e4-472f86b31c0e.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   },
   {
     id: 7,
@@ -62,6 +74,8 @@ const episodes = [
     title: "Soy traductor entre programadores y clientes",
     guest: "Agustín Salamone",
     image: "/lovable-uploads/e3b0639f-e590-4e90-8180-8248160e18b4.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   },
   {
     id: 8,
@@ -69,6 +83,8 @@ const episodes = [
     title: "Emprender es caer y levantarse",
     guest: "Diego Balboni",
     image: "/lovable-uploads/2e10e36b-a9ca-4300-82ad-e0b6ec69c24f.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   },
   {
     id: 9,
@@ -76,6 +92,8 @@ const episodes = [
     title: "El arte de animar y emprender - La historia de Búho",
     guest: "Ezequiel Adatto",
     image: "/lovable-uploads/15cbd167-3c81-49ed-82a3-a14a5d87fc6b.png",
+    youtubeUrl: "https://www.youtube.com/@habla.agency/videos",
+    spotifyUrl: "https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS"
   }
 ];
 
@@ -233,7 +251,7 @@ const Podcast = () => {
           </Carousel>
         </div>
 
-        {/* Episode list table for desktop - Updated with YouTube and Spotify icons */}
+        {/* Episode list table for desktop - Updated with YouTube and Spotify links */}
         <div className="hidden lg:block mt-16 bg-white rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.15)] overflow-hidden">
           <h2 className="text-2xl font-bold p-6 border-b">Todos los episodios</h2>
           <Table>
@@ -260,7 +278,7 @@ const Podcast = () => {
                         variant="ghost" 
                         size="sm"
                         className="hover:bg-transparent group"
-                        onClick={() => window.open('https://www.youtube.com/@habla.agency', '_blank')}
+                        onClick={() => window.open(episode.youtubeUrl, '_blank')}
                       >
                         <Youtube className="h-5 w-5 text-current group-hover:text-white" />
                       </Button>
@@ -268,7 +286,7 @@ const Podcast = () => {
                         variant="ghost" 
                         size="sm"
                         className="hover:bg-transparent group"
-                        onClick={() => window.open('https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS', '_blank')}
+                        onClick={() => window.open(episode.spotifyUrl, '_blank')}
                       >
                         <Music className="h-5 w-5 text-current group-hover:text-white" />
                       </Button>

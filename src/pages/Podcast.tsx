@@ -6,9 +6,9 @@ import Podcast from '../components/Podcast';
 
 const PodcastPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <NavBar />
-      <div className="pt-24">
+      <div className="pt-16">
         <Podcast />
       </div>
       <Footer />

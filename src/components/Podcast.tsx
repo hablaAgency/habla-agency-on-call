@@ -92,8 +92,8 @@ const Podcast = () => {
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Hero section */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
+        {/* Hero section - 100vh height */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-20 min-h-[100vh] pt-16">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Un café con <span className="text-habla-red">habla.agency</span>
@@ -138,16 +138,16 @@ const Podcast = () => {
           </div>
         </div>
 
-        {/* About section with mobile phone image on the left */}
-        <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
-          <div className="md:w-1/3">
+        {/* About section with mobile phone image on the left - 100vh height */}
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-16 min-h-[100vh]">
+          <div className="md:w-1/2 flex justify-center">
             <img 
               src="/lovable-uploads/0968423a-acf9-4fc8-857f-4784d1f76e9f.png" 
               alt="Un café con habla.agency mobile app" 
-              className="w-48 max-w-full mx-auto"
+              className="w-auto h-[70vh] max-w-full"
             />
           </div>
-          <div className="md:w-2/3">
+          <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-6">Sobre el podcast</h2>
             <p className="text-lg">
               "Un café con habla.agency" es un espacio donde conversamos con referentes de diferentes industrias para conocer sus historias, compartir aprendizajes y descubrir las claves de su éxito. Cada episodio es una oportunidad para inspirarse y obtener conocimientos valiosos que pueden transformar la forma en que abordamos nuestros propios proyectos.

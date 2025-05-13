@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
@@ -24,22 +25,38 @@ const Services = () => {
 
   return (
     <>
-      <section className="py-20 px-4 bg-gray-100">
+      {/* First section with the blue pattern background */}
+      <section 
+        className="py-20 px-4"
+        style={{
+          backgroundImage: "url('/lovable-uploads/5a12bd78-b4c3-4827-a7d4-29c6c95928c1.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Somos tu primer llamado. Y también el único que vas a necesitar.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Somos tu primer llamado. Y también el único que vas a necesitar.</h2>
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg mb-4">
+              <p className="text-lg mb-4 text-white">
                 Sabemos que hacer crecer un negocio en el entorno digital puede parecer complejo. Por eso, en nuestra agencia no solo te acompañamos: te resolvemos todo.
               </p>
-              <p className="text-lg mb-4">
+              <p className="text-lg mb-4 text-white">
                 No importa si necesitás posicionar tu marca, vender más, optimizar procesos o simplemente dejar de sentir que estás solo. Somos ese equipo de especialistas que trabaja detrás de escena para que todo funcione.
               </p>
-              <p className="text-lg mb-4">
+              <p className="text-lg mb-4 text-white">
                 Nuestra propuesta es integral. Te brindamos una solución a medida, diseñada con estrategia, creatividad y foco en resultados.
               </p>
             </div>
-            <h3 className="text-2xl font-bold mt-8 mb-3">¿Qué podemos hacer por tu marca?</h3>
+          </div>
+        </div>
+      </section>
+
+      {/* Second section with the gray background for services icons */}
+      <section className="py-20 px-4 bg-gray-100">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold mb-3">¿Qué podemos hacer por tu marca?</h3>
             <p className="text-xl font-semibold text-habla-blue">Todo esto. Y más.</p>
           </div>
 

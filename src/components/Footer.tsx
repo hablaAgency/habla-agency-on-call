@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/7ef08172-49e2-439b-87e7-9023ba1e2df0.png" 
                 alt="Habla Agency Logo" 
-                className="h-8" 
+                className="h-6" 
               />
             </Link>
           </div>

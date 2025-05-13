@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Youtube, Music, Play, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -83,6 +83,8 @@ const episodes = [
 const Podcast = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const episodesPerPage = 6;
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
+  const [isPhoneVisible, setIsPhoneVisible] = useState(false);
   
   // Calculate pagination
   const indexOfLastEpisode = currentPage * episodesPerPage;
@@ -92,6 +94,26 @@ const Podcast = () => {
 
   // Change page handler
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+  // Animation on load/scroll
+  useEffect(() => {
+    setIsHeroVisible(true);
+    
+    const handleScroll = () => {
+      const phoneSection = document.getElementById('phone-section');
+      if (phoneSection) {
+        const rect = phoneSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+        setIsPhoneVisible(isVisible);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section className="py-12 md:py-16 bg-gray-50">
@@ -108,7 +130,7 @@ const Podcast = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 variant="outline" 
-                className="flex items-center gap-2 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition-colors px-8 py-6"
+                className="flex items-center gap-2 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition-colors px-8 py-6 shadow-lg hover:shadow-xl"
                 onClick={() => window.open('https://www.youtube.com/@habla.agency', '_blank')}
               >
                 <Youtube className="h-5 w-5" />
@@ -117,7 +139,7 @@ const Podcast = () => {
               
               <Button 
                 variant="outline" 
-                className="flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition-colors px-8 py-6"
+                className="flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition-colors px-8 py-6 shadow-lg hover:shadow-xl"
                 onClick={() => window.open('https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS', '_blank')}
               >
                 <Music className="h-5 w-5" />
@@ -130,9 +152,9 @@ const Podcast = () => {
             <img 
               src="/lovable-uploads/04ce224b-e9db-45f5-a79a-934241c4ce1f.png" 
               alt="Un café con habla.agency" 
-              className="w-full h-auto rounded-lg shadow-lg relative z-10"
+              className={`w-full h-auto rounded-lg shadow-[0_10px_20px_rgba(0,0,0,0.25)] relative z-10 transition-all duration-700 transform ${isHeroVisible ? 'translate-x-0 opacity-100' : 'translate-x-32 opacity-0'}`}
             />
-            <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg z-20">
+            <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] z-20">
               <img 
                 src="/lovable-uploads/c9b42c00-d42d-44a7-b128-890656412f09.png"
                 alt="Logo Un Café con habla.agency"
@@ -143,12 +165,12 @@ const Podcast = () => {
         </div>
 
         {/* About section with mobile phone image on the left - 100vh height */}
-        <div className="flex flex-col md:flex-row items-center gap-8 mb-16 min-h-[100vh]">
+        <div id="phone-section" className="flex flex-col md:flex-row items-center gap-8 mb-16 min-h-[100vh]">
           <div className="md:w-1/2 flex justify-center">
             <img 
               src="/lovable-uploads/0968423a-acf9-4fc8-857f-4784d1f76e9f.png" 
               alt="Un café con habla.agency mobile app" 
-              className="w-auto h-[70vh] max-w-full"
+              className={`w-auto h-[70vh] max-w-full shadow-[0_10px_20px_rgba(0,0,0,0.25)] transition-all duration-700 transform ${isPhoneVisible ? 'translate-x-0 opacity-100' : '-translate-x-32 opacity-0'}`}
             />
           </div>
           <div className="md:w-1/2">
@@ -176,7 +198,7 @@ const Podcast = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {episodes.map((episode) => (
                 <CarouselItem key={`carousel-${episode.number}-${episode.guest}`} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <Card className="overflow-hidden transition-all duration-300 hover:shadow-2xl h-full">
+                  <Card className="overflow-hidden transition-all duration-300 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] h-full shadow-[0_5px_15px_rgba(0,0,0,0.2)]">
                     <div className="relative h-48 overflow-hidden bg-gray-200">
                       <img 
                         src={episode.image} 
@@ -196,7 +218,7 @@ const Podcast = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="w-full mt-2 border-habla-red text-habla-red hover:bg-habla-red hover:text-white"
+                        className="w-full mt-2 border-habla-red text-habla-red hover:bg-habla-red hover:text-white shadow-md hover:shadow-lg"
                       >
                         <Play className="h-4 w-4 mr-2" /> Escuchar ahora
                       </Button>
@@ -206,14 +228,14 @@ const Podcast = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-6 gap-4">
-              <CarouselPrevious className="static transform-none mx-2" />
-              <CarouselNext className="static transform-none mx-2" />
+              <CarouselPrevious className="static transform-none mx-2 shadow-lg hover:shadow-xl" />
+              <CarouselNext className="static transform-none mx-2 shadow-lg hover:shadow-xl" />
             </div>
           </Carousel>
         </div>
 
         {/* Episode list table for desktop */}
-        <div className="hidden lg:block mt-16 bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="hidden lg:block mt-16 bg-white rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.15)] overflow-hidden">
           <h2 className="text-2xl font-bold p-6 border-b">Todos los episodios</h2>
           <Table>
             <TableHeader>
@@ -226,7 +248,10 @@ const Podcast = () => {
             </TableHeader>
             <TableBody>
               {episodes.map((episode) => (
-                <TableRow key={`table-${episode.number}-${episode.guest}`} className="hover:bg-gray-50">
+                <TableRow 
+                  key={`table-${episode.number}-${episode.guest}`} 
+                  className="hover:bg-habla-red hover:text-white transition-colors duration-200"
+                >
                   <TableCell className="font-bold">{episode.number}</TableCell>
                   <TableCell className="font-medium">{episode.title}</TableCell>
                   <TableCell>{episode.guest}</TableCell>
@@ -234,7 +259,7 @@ const Podcast = () => {
                     <Button 
                       variant="ghost" 
                       size="sm"
-                      className="hover:text-habla-red"
+                      className="hover:text-white group"
                     >
                       <Play className="h-4 w-4" />
                     </Button>
@@ -246,7 +271,7 @@ const Podcast = () => {
         </div>
 
         {/* CTA Section - New addition */}
-        <div className="py-20 bg-gradient-to-r from-habla-red/90 to-habla-red rounded-lg shadow-xl mt-20 text-center text-white">
+        <div className="py-20 bg-gradient-to-r from-habla-red/90 to-habla-red rounded-lg shadow-[0_15px_30px_rgba(0,0,0,0.25)] mt-20 text-center text-white">
           <div className="max-w-3xl mx-auto px-6">
             <h2 className="text-4xl font-bold mb-6">¡Sigue nuestro podcast!</h2>
             <p className="text-xl mb-10">
@@ -254,14 +279,14 @@ const Podcast = () => {
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-6">
               <Button 
-                className="bg-white text-habla-red hover:bg-gray-100 flex items-center gap-3 text-lg px-8 py-6"
+                className="bg-white text-habla-red hover:bg-gray-100 flex items-center gap-3 text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
                 onClick={() => window.open('https://www.youtube.com/@habla.agency', '_blank')}
               >
                 <Youtube size={24} className="text-habla-red" />
                 <span>Suscribirse en YouTube</span>
               </Button>
               <Button 
-                className="bg-white text-green-600 hover:bg-gray-100 flex items-center gap-3 text-lg px-8 py-6"
+                className="bg-white text-green-600 hover:bg-gray-100 flex items-center gap-3 text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
                 onClick={() => window.open('https://open.spotify.com/show/0X5oJ9pSZ8QpuZYO8ccEzS', '_blank')}
               >
                 <Music size={24} className="text-green-600" />

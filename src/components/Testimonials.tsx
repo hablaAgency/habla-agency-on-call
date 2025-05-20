@@ -9,6 +9,7 @@ const testimonials = [
   {
     id: 1,
     avatar: "/placeholder.svg",
+    title: "Mi relación con Guido es sólida",
     text: "Mi relación con Guido es sólida, amigable y excelente. Honestamente, tener ese tipo de vínculo y apoyo hace que trabajar con ellos sea fácil.",
     name: "Astrid Martínez",
     position: "PA",
@@ -19,6 +20,7 @@ const testimonials = [
   {
     id: 2,
     avatar: "/placeholder.svg",
+    title: "Trabajo excelente",
     text: "Un trabajo excelente, superó mis expectativas.",
     name: "Avi Pilcer",
     position: "AR",
@@ -29,6 +31,7 @@ const testimonials = [
   {
     id: 3,
     avatar: "/placeholder.svg",
+    title: "Muy atentos",
     text: "Muy atentos, interesados en entender lo que necesitás. Ordenados en su trabajo y claros al reportar.",
     name: "Jorge Seamos Bosques",
     position: "AR",
@@ -39,6 +42,7 @@ const testimonials = [
   {
     id: 4,
     avatar: "/placeholder.svg",
+    title: "Muy contenta con todo :)",
     text: "En mi experiencia trabajando con los chicos, todo súper bien, profesional y prolijo. Siempre responden súper rápido y atienden todo tipo de dudas (¡incluso muchas que exceden el servicio contratado!). Súper contenta :)",
     name: "María José Mas D'Alessandro",
     position: "AR",
@@ -49,6 +53,7 @@ const testimonials = [
   {
     id: 5,
     avatar: "/placeholder.svg",
+    title: "Los felicito.",
     text: "Lo que más destaco, más allá de la calidad en cada tarea, es la predisposición y las ideas que traen a cada reunión y avance. Los reportes mensuales son espectaculares y clarísimos. Me parece algo que destaca su servicio y ayuda a mantener un seguimiento claro de todo el trabajo que se viene haciendo.",
     name: "Delfina Schiano",
     position: "AR",
@@ -59,6 +64,7 @@ const testimonials = [
   {
     id: 6,
     avatar: "/placeholder.svg",
+    title: "Me pude olvidar del tema...",
     text: "¿Qué más se puede pedir? La campaña en redes fue genial, porque las consultas se multiplicaron notablemente. De nuestro lado no medimos el efecto en detalle, pero fue significativo.",
     name: "Gloria Canseco",
     position: "AR",
@@ -69,6 +75,7 @@ const testimonials = [
   {
     id: 7,
     avatar: "/placeholder.svg",
+    title: "Nuestra experiencia fue excelente en todos los aspectos",
     text: "Encontramos creatividad, disposición, innovación, seguimiento y comprensión de nuestras necesidades.",
     name: "Silvana Golzman",
     position: "AR",
@@ -79,6 +86,7 @@ const testimonials = [
   {
     id: 8,
     avatar: "/placeholder.svg",
+    title: "Experiencia increíble con Habla Agency",
     text: "Recientemente contraté sus servicios para una campaña publicitaria. Desde el primer contacto, escucharon mis ideas y necesidades, y gracias a su experiencia, lograron materializarlas de una forma que superó mis expectativas. La velocidad con la que trabajaron fue asombrosa; cada paso del proceso se manejó eficientemente, permitiéndome tener la campaña lista en tiempo récord. Pero lo que realmente destacó fue la calidad del trabajo final. Los diseños, mensajes y estrategias implementadas fueron excelentes. La atención al detalle y la creatividad en cada elemento de la campaña fueron admirables. Además, su disposición para hacer ajustes según mis devoluciones fue muy valorada.",
     name: "Josefina Chevalie",
     position: "US",
@@ -89,6 +97,7 @@ const testimonials = [
   {
     id: 9,
     avatar: "/placeholder.svg",
+    title: "Excelente",
     text: "Excelente equipo de trabajo y profesionales. Logran captar la esencia de cada tarea y reflejarla en los trabajos solicitados. Muy buena atención de cada uno de ellos. Altamente recomendable.",
     name: "Gabriela Gallo",
     position: "AR",
@@ -99,6 +108,7 @@ const testimonials = [
   {
     id: 10,
     avatar: "/placeholder.svg",
+    title: "Tuve una experiencia excelente con Habla",
     text: "Tuve una experiencia excelente con Habla, mi portfolio y certificados de autenticidad quedaron de primera. ¡Gran servicio!",
     name: "Isabela Dias Da Silva",
     position: "AR",
@@ -133,25 +143,31 @@ const Testimonials = () => {
               >
                 {testimonials.map((testimonial) => (
                   <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                    <Card className="bg-white p-6 md:p-8 rounded-3xl shadow-md flex flex-col items-center">
-                      <Avatar className="w-24 h-24 mb-6 bg-habla-blue">
+                    <Card className="bg-white p-6 md:p-8 rounded-3xl shadow-md flex flex-col items-center h-[30rem]">
+                      <Avatar className="w-24 h-24 mb-4 bg-habla-blue">
                         <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                         <AvatarFallback className="bg-habla-blue text-white text-xl">
                           {testimonial.name.charAt(0)}
                         </AvatarFallback>
                       </Avatar>
                       
-                      <blockquote className="mb-6 text-center text-gray-700 max-w-2xl">
-                        "{testimonial.text}"
-                      </blockquote>
-                      
-                      <div className="flex mb-3">
+                      <div className="flex mb-2">
                         {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
                       
-                      <footer className="text-center">
+                      <h3 className="font-bold text-xl mb-2 text-center text-habla-blue">
+                        {testimonial.title}
+                      </h3>
+                      
+                      <div className="flex-grow overflow-y-auto mb-4 scrollbar-hide">
+                        <blockquote className="text-center text-gray-700">
+                          "{testimonial.text}"
+                        </blockquote>
+                      </div>
+                      
+                      <footer className="text-center mt-auto">
                         <p className="font-semibold text-lg">{testimonial.name} <span className="text-gray-500">({testimonial.position})</span></p>
                         <p className="text-sm text-gray-500">📅 {testimonial.date}</p>
                       </footer>

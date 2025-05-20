@@ -10,6 +10,15 @@ import {
 const Hero = () => {
   const isMobile = useIsMobile();
   
+  // Array of successive phrases for the carousel
+  const carouselPhrases = [
+    "always working for you",
+    "creative marketing solutions",
+    "strategic campaign planning",
+    "data-driven results",
+    "personalized approach"
+  ];
+  
   return (
     <>
       <section 
@@ -44,22 +53,22 @@ const Hero = () => {
         </div>
       </section>
       
-      <div className="w-full bg-habla-blue py-4 overflow-hidden">
+      <div className="w-full bg-habla-blue py-6 overflow-hidden">
         <Carousel
           opts={{
             align: "start",
             loop: true,
-            skipSnaps: true,
+            skipSnaps: false,
             dragFree: true,
           }}
-          className="w-full"
+          className="w-full max-w-none"
           autoplay={true}
         >
           <CarouselContent className="flex animate-carousel">
-            {Array.from({ length: 5 }).map((_, index) => (
+            {carouselPhrases.map((phrase, index) => (
               <CarouselItem key={index} className="flex-shrink-0 px-8">
-                <div className="text-white text-lg md:text-xl font-semibold uppercase whitespace-nowrap">
-                  always working for you
+                <div className="text-white text-lg md:text-2xl font-semibold uppercase whitespace-nowrap">
+                  {phrase}
                 </div>
               </CarouselItem>
             ))}

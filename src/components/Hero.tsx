@@ -19,6 +19,12 @@ const Hero = () => {
     "personalized approach"
   ];
   
+  // Create a repeated array with each phrase appearing multiple times
+  // to ensure continuous flow without gaps
+  const repeatedPhrases = carouselPhrases.flatMap(phrase => 
+    Array(3).fill(phrase) // Each phrase appears 3 times consecutively
+  );
+  
   return (
     <>
       <section 
@@ -65,8 +71,8 @@ const Hero = () => {
           autoplay={true}
         >
           <CarouselContent className="flex animate-carousel">
-            {carouselPhrases.map((phrase, index) => (
-              <CarouselItem key={index} className="flex-shrink-0 px-8">
+            {repeatedPhrases.map((phrase, index) => (
+              <CarouselItem key={index} className="flex-shrink-0 px-4">
                 <div className="text-white text-lg md:text-2xl font-semibold uppercase whitespace-nowrap">
                   {phrase}
                 </div>

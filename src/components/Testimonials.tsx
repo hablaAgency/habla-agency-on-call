@@ -9,29 +9,102 @@ const testimonials = [
   {
     id: 1,
     avatar: "/placeholder.svg",
-    text: "Habla.agency transformó nuestra visión en una estrategia digital cohesiva que superó todas nuestras expectativas de rendimiento.",
-    name: "Carlos Rodríguez",
-    position: "Director de Marketing",
-    company: "Empresa Innovadora",
-    rating: 5
+    text: "Mi relación con Guido es sólida, amigable y excelente. Honestamente, tener ese tipo de vínculo y apoyo hace que trabajar con ellos sea fácil.",
+    name: "Astrid Martínez",
+    position: "PA",
+    company: "",
+    rating: 5,
+    date: "2 de enero de 2025"
   },
   {
     id: 2,
     avatar: "/placeholder.svg",
-    text: "Su capacidad para entregar resultados de calidad en tiempos récord ha sido fundamental para nuestro crecimiento en el mercado.",
-    name: "Maria Fernández",
-    position: "CEO",
-    company: "Startup Digital",
-    rating: 5
+    text: "Un trabajo excelente, superó mis expectativas.",
+    name: "Avi Pilcer",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "24 de junio de 2024"
   },
   {
     id: 3,
     avatar: "/placeholder.svg",
-    text: "El equilibrio perfecto entre creatividad y efectividad. Un equipo que realmente entiende las necesidades del mercado actual.",
-    name: "Javier López",
-    position: "Director General",
-    company: "Empresa Internacional",
-    rating: 5
+    text: "Muy atentos, interesados en entender lo que necesitás. Ordenados en su trabajo y claros al reportar.",
+    name: "Jorge Seamos Bosques",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "1 de marzo de 2024"
+  },
+  {
+    id: 4,
+    avatar: "/placeholder.svg",
+    text: "En mi experiencia trabajando con los chicos, todo súper bien, profesional y prolijo. Siempre responden súper rápido y atienden todo tipo de dudas (¡incluso muchas que exceden el servicio contratado!). Súper contenta :)",
+    name: "María José Mas D'Alessandro",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "15 de diciembre de 2023"
+  },
+  {
+    id: 5,
+    avatar: "/placeholder.svg",
+    text: "Lo que más destaco, más allá de la calidad en cada tarea, es la predisposición y las ideas que traen a cada reunión y avance. Los reportes mensuales son espectaculares y clarísimos. Me parece algo que destaca su servicio y ayuda a mantener un seguimiento claro de todo el trabajo que se viene haciendo.",
+    name: "Delfina Schiano",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "7 de diciembre de 2023"
+  },
+  {
+    id: 6,
+    avatar: "/placeholder.svg",
+    text: "¿Qué más se puede pedir? La campaña en redes fue genial, porque las consultas se multiplicaron notablemente. De nuestro lado no medimos el efecto en detalle, pero fue significativo.",
+    name: "Gloria Canseco",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "4 de diciembre de 2023"
+  },
+  {
+    id: 7,
+    avatar: "/placeholder.svg",
+    text: "Encontramos creatividad, disposición, innovación, seguimiento y comprensión de nuestras necesidades.",
+    name: "Silvana Golzman",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "4 de octubre de 2023"
+  },
+  {
+    id: 8,
+    avatar: "/placeholder.svg",
+    text: "Recientemente contraté sus servicios para una campaña publicitaria. Desde el primer contacto, escucharon mis ideas y necesidades, y gracias a su experiencia, lograron materializarlas de una forma que superó mis expectativas. La velocidad con la que trabajaron fue asombrosa; cada paso del proceso se manejó eficientemente, permitiéndome tener la campaña lista en tiempo récord. Pero lo que realmente destacó fue la calidad del trabajo final. Los diseños, mensajes y estrategias implementadas fueron excelentes. La atención al detalle y la creatividad en cada elemento de la campaña fueron admirables. Además, su disposición para hacer ajustes según mis devoluciones fue muy valorada.",
+    name: "Josefina Chevalie",
+    position: "US",
+    company: "",
+    rating: 5,
+    date: "3 de noviembre de 2023"
+  },
+  {
+    id: 9,
+    avatar: "/placeholder.svg",
+    text: "Excelente equipo de trabajo y profesionales. Logran captar la esencia de cada tarea y reflejarla en los trabajos solicitados. Muy buena atención de cada uno de ellos. Altamente recomendable.",
+    name: "Gabriela Gallo",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "4 de diciembre de 2023"
+  },
+  {
+    id: 10,
+    avatar: "/placeholder.svg",
+    text: "Tuve una experiencia excelente con Habla, mi portfolio y certificados de autenticidad quedaron de primera. ¡Gran servicio!",
+    name: "Isabela Dias Da Silva",
+    position: "AR",
+    company: "",
+    rating: 5,
+    date: "4 de diciembre de 2023"
   }
 ];
 
@@ -79,7 +152,8 @@ const Testimonials = () => {
                       </div>
                       
                       <footer className="text-center">
-                        <p className="font-semibold text-lg">{testimonial.name}</p>
+                        <p className="font-semibold text-lg">{testimonial.name} <span className="text-gray-500">({testimonial.position})</span></p>
+                        <p className="text-sm text-gray-500">📅 {testimonial.date}</p>
                       </footer>
                     </Card>
                   </div>
